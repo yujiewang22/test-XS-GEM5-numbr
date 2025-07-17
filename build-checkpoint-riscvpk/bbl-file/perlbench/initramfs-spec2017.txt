@@ -1,0 +1,1096 @@
+dir /bin 755 0 0
+dir /etc 755 0 0
+dir /dev 755 0 0
+dir /lib 755 0 0
+dir /proc 755 0 0
+dir /sbin 755 0 0
+dir /sys 755 0 0
+dir /tmp 755 0 0
+dir /usr 755 0 0
+dir /mnt 755 0 0
+dir /usr/bin 755 0 0
+dir /usr/lib 755 0 0
+dir /usr/sbin 755 0 0
+dir /var 755 0 0
+dir /var/tmp 755 0 0
+dir /root 755 0 0
+dir /var/log 755 0 0
+
+nod /dev/console 644 0 0 c 5 1
+nod /dev/null 644 0 0 c 1 3
+# libraries
+file /lib/ld-linux-riscv64-lp64d.so.1 ${RISCV}/sysroot/lib/ld-linux-riscv64-lp64d.so.1 755 0 0
+file /lib/libc.so.6 ${RISCV}/sysroot/lib/libc.so.6 755 0 0
+file /lib/libresolv.so.2 ${RISCV}/sysroot/lib/libresolv.so.2 755 0 0
+file /lib/libm.so.6 ${RISCV}/sysroot/lib/libm.so.6 755 0 0
+file /lib/libdl.so.2 ${RISCV}/sysroot/lib/libdl.so.2 755 0 0
+file /lib/libpthread.so.0 ${RISCV}/sysroot/lib/libpthread.so.0 755 0 0
+# busybox
+file /bin/busybox ${RISCV_ROOTFS_HOME}/rootfsimg/build/busybox 755 0 0
+file /etc/inittab ${RISCV_ROOTFS_HOME}/rootfsimg/inittab-spec 755 0 0
+slink /init /bin/busybox 755 0 0
+# SPEC common
+dir /spec_common 755 0 0
+file /spec_common/before_workload ${RISCV_ROOTFS_HOME}/rootfsimg/build/before_workload 755 0 0
+file /spec_common/trap ${RISCV_ROOTFS_HOME}/rootfsimg/build/trap 755 0 0
+# SPEC
+dir /spec 755 0 0
+file /spec/run.sh ${RISCV_ROOTFS_HOME}/rootfsimg/run.sh 755 0 0
+file /spec/perlbench ${SPEC2017_EXE_DIR}/perlbench 755 0 0
+file /spec/splitmail.in ${SPEC2017_INPUT_DIR}/perlbench/splitmail.in 755 0 0
+file /spec/checkspam.in ${SPEC2017_INPUT_DIR}/perlbench/checkspam.in 755 0 0
+file /spec/diffmail.pl ${SPEC2017_INPUT_DIR}/perlbench/diffmail.pl 755 0 0
+file /spec/splitmail.pl ${SPEC2017_INPUT_DIR}/perlbench/splitmail.pl 755 0 0
+file /spec/checkspam.pl ${SPEC2017_INPUT_DIR}/perlbench/checkspam.pl 755 0 0
+file /spec/diffmail.in ${SPEC2017_INPUT_DIR}/perlbench/diffmail.in 755 0 0
+file /spec/cpu2017_mhonarc.rc ${SPEC2017_INPUT_DIR}/perlbench/cpu2017_mhonarc.rc 755 0 0
+dir /spec/lib 755 0 0
+dir /spec/lib/Tie 755 0 0
+dir /spec/lib/Tie/Handle 755 0 0
+dir /spec/lib/Tie/Hash 755 0 0
+dir /spec/lib/Tie/Array 755 0 0
+dir /spec/lib/Digest 755 0 0
+dir /spec/lib/Test 755 0 0
+dir /spec/lib/Test/Builder 755 0 0
+dir /spec/lib/Test/Builder/Tester 755 0 0
+dir /spec/lib/Devel 755 0 0
+dir /spec/lib/warnings 755 0 0
+dir /spec/lib/Search 755 0 0
+dir /spec/lib/Date 755 0 0
+dir /spec/lib/Date/Language 755 0 0
+dir /spec/lib/Attribute 755 0 0
+dir /spec/lib/List 755 0 0
+dir /spec/lib/List/Util 755 0 0
+dir /spec/lib/Mail 755 0 0
+dir /spec/lib/Mail/SpamAssassin 755 0 0
+dir /spec/lib/Module 755 0 0
+dir /spec/lib/Module/CoreList 755 0 0
+dir /spec/lib/Math 755 0 0
+dir /spec/lib/Math/BigFloat 755 0 0
+dir /spec/lib/Math/BigInt 755 0 0
+dir /spec/lib/version 755 0 0
+dir /spec/lib/MIME 755 0 0
+dir /spec/lib/HTML 755 0 0
+dir /spec/lib/File 755 0 0
+dir /spec/lib/File/Spec 755 0 0
+dir /spec/lib/Scalar 755 0 0
+dir /spec/lib/overload 755 0 0
+dir /spec/lib/Perl 755 0 0
+dir /spec/lib/PerlIO 755 0 0
+dir /spec/lib/PerlIO/via 755 0 0
+dir /spec/lib/Time 755 0 0
+dir /spec/lib/unicore 755 0 0
+dir /spec/lib/unicore/lib 755 0 0
+dir /spec/lib/unicore/lib/NFDQC 755 0 0
+dir /spec/lib/unicore/lib/CI 755 0 0
+dir /spec/lib/unicore/lib/In 755 0 0
+dir /spec/lib/unicore/lib/DI 755 0 0
+dir /spec/lib/unicore/lib/XIDS 755 0 0
+dir /spec/lib/unicore/lib/BidiM 755 0 0
+dir /spec/lib/unicore/lib/Cased 755 0 0
+dir /spec/lib/unicore/lib/PatSyn 755 0 0
+dir /spec/lib/unicore/lib/STerm 755 0 0
+dir /spec/lib/unicore/lib/SB 755 0 0
+dir /spec/lib/unicore/lib/Gc 755 0 0
+dir /spec/lib/unicore/lib/CWCM 755 0 0
+dir /spec/lib/unicore/lib/QMark 755 0 0
+dir /spec/lib/unicore/lib/BidiC 755 0 0
+dir /spec/lib/unicore/lib/Lower 755 0 0
+dir /spec/lib/unicore/lib/UIdeo 755 0 0
+dir /spec/lib/unicore/lib/Alpha 755 0 0
+dir /spec/lib/unicore/lib/LOE 755 0 0
+dir /spec/lib/unicore/lib/Math 755 0 0
+dir /spec/lib/unicore/lib/Jt 755 0 0
+dir /spec/lib/unicore/lib/Bc 755 0 0
+dir /spec/lib/unicore/lib/NFCQC 755 0 0
+dir /spec/lib/unicore/lib/Sc 755 0 0
+dir /spec/lib/unicore/lib/GrBase 755 0 0
+dir /spec/lib/unicore/lib/NFKDQC 755 0 0
+dir /spec/lib/unicore/lib/Ideo 755 0 0
+dir /spec/lib/unicore/lib/CWCF 755 0 0
+dir /spec/lib/unicore/lib/Perl 755 0 0
+dir /spec/lib/unicore/lib/Dt 755 0 0
+dir /spec/lib/unicore/lib/Scx 755 0 0
+dir /spec/lib/unicore/lib/GCB 755 0 0
+dir /spec/lib/unicore/lib/Upper 755 0 0
+dir /spec/lib/unicore/lib/Dash 755 0 0
+dir /spec/lib/unicore/lib/Dep 755 0 0
+dir /spec/lib/unicore/lib/CWT 755 0 0
+dir /spec/lib/unicore/lib/NFKCQC 755 0 0
+dir /spec/lib/unicore/lib/Lb 755 0 0
+dir /spec/lib/unicore/lib/CWKCF 755 0 0
+dir /spec/lib/unicore/lib/Nt 755 0 0
+dir /spec/lib/unicore/lib/CWU 755 0 0
+dir /spec/lib/unicore/lib/WB 755 0 0
+dir /spec/lib/unicore/lib/NChar 755 0 0
+dir /spec/lib/unicore/lib/Ccc 755 0 0
+dir /spec/lib/unicore/lib/PatWS 755 0 0
+dir /spec/lib/unicore/lib/CE 755 0 0
+dir /spec/lib/unicore/lib/Hyphen 755 0 0
+dir /spec/lib/unicore/lib/Nv 755 0 0
+dir /spec/lib/unicore/lib/IDS 755 0 0
+dir /spec/lib/unicore/lib/SD 755 0 0
+dir /spec/lib/unicore/lib/Age 755 0 0
+dir /spec/lib/unicore/lib/Bpt 755 0 0
+dir /spec/lib/unicore/lib/Blk 755 0 0
+dir /spec/lib/unicore/lib/Jg 755 0 0
+dir /spec/lib/unicore/lib/CompEx 755 0 0
+dir /spec/lib/unicore/lib/Dia 755 0 0
+dir /spec/lib/unicore/lib/IDC 755 0 0
+dir /spec/lib/unicore/lib/Ea 755 0 0
+dir /spec/lib/unicore/lib/CWL 755 0 0
+dir /spec/lib/unicore/lib/Ext 755 0 0
+dir /spec/lib/unicore/lib/Hex 755 0 0
+dir /spec/lib/unicore/lib/Term 755 0 0
+dir /spec/lib/unicore/lib/XIDC 755 0 0
+dir /spec/lib/unicore/lib/Hst 755 0 0
+dir /spec/lib/unicore/To 755 0 0
+dir /spec/lib/Text 755 0 0
+dir /spec/lib/Exporter 755 0 0
+dir /spec/lib/Getopt 755 0 0
+dir /spec/lib/Unicode 755 0 0
+dir /spec/lib/Unicode/Collate 755 0 0
+dir /spec/lib/Unicode/Collate/Locale 755 0 0
+dir /spec/lib/Unicode/Collate/CJK 755 0 0
+dir /spec/lib/Carp 755 0 0
+dir /spec/lib/Hash 755 0 0
+dir /spec/lib/Hash/Util 755 0 0
+dir /spec/lib/Data 755 0 0
+dir /spec/lib/IO 755 0 0
+dir /spec/lib/IO/Socket 755 0 0
+dir /spec/lib/auto 755 0 0
+dir /spec/lib/auto/Storable 755 0 0
+dir /spec/lib/MHonArc 755 0 0
+dir /spec/lib/MHonArc/UTF8 755 0 0
+dir /spec/lib/MHonArc/CharEnt 755 0 0
+dir /spec/lib/MHonArc/Char 755 0 0
+file /spec/lib/mhfile.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhfile.pl 755 0 0
+file /spec/lib/subs.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/subs.pm 755 0 0
+file /spec/lib/Tie/StdHandle.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Tie/StdHandle.pm 755 0 0
+file /spec/lib/Tie/Handle.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Tie/Handle.pm 755 0 0
+file /spec/lib/Tie/Scalar.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Tie/Scalar.pm 755 0 0
+file /spec/lib/Tie/RefHash.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Tie/RefHash.pm 755 0 0
+file /spec/lib/Tie/Memoize.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Tie/Memoize.pm 755 0 0
+file /spec/lib/Tie/Array.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Tie/Array.pm 755 0 0
+file /spec/lib/Tie/Hash/NamedCapture.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Tie/Hash/NamedCapture.pm 755 0 0
+file /spec/lib/Tie/SubstrHash.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Tie/SubstrHash.pm 755 0 0
+file /spec/lib/Tie/Hash.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Tie/Hash.pm 755 0 0
+file /spec/lib/Tie/File.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Tie/File.pm 755 0 0
+file /spec/lib/mhnote.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhnote.pl 755 0 0
+file /spec/lib/mhopt.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhopt.pl 755 0 0
+file /spec/lib/re.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/re.pm 755 0 0
+file /spec/lib/autouse.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/autouse.pm 755 0 0
+file /spec/lib/bytes.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/bytes.pm 755 0 0
+file /spec/lib/meta_notation.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/meta_notation.pm 755 0 0
+file /spec/lib/bytes_heavy.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/bytes_heavy.pl 755 0 0
+file /spec/lib/Digest/base.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Digest/base.pm 755 0 0
+file /spec/lib/Digest/MD5.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Digest/MD5.pm 755 0 0
+file /spec/lib/Digest/SHA.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Digest/SHA.pm 755 0 0
+file /spec/lib/Digest/file.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Digest/file.pm 755 0 0
+file /spec/lib/Test/More.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Test/More.pm 755 0 0
+file /spec/lib/Test/Builder/Module.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Test/Builder/Module.pm 755 0 0
+file /spec/lib/Test/Builder/Tester/Color.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Test/Builder/Tester/Color.pm 755 0 0
+file /spec/lib/Test/Builder/Tester.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Test/Builder/Tester.pm 755 0 0
+file /spec/lib/Test/Builder.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Test/Builder.pm 755 0 0
+file /spec/lib/Test/Simple.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Test/Simple.pm 755 0 0
+file /spec/lib/mhdb.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhdb.pl 755 0 0
+file /spec/lib/Devel/Peek.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Devel/Peek.pm 755 0 0
+file /spec/lib/warnings/register.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/warnings/register.pm 755 0 0
+file /spec/lib/Search/Dict.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Search/Dict.pm 755 0 0
+file /spec/lib/iso8859.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/iso8859.pl 755 0 0
+file /spec/lib/readmail.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/readmail.pl 755 0 0
+file /spec/lib/version.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/version.pm 755 0 0
+file /spec/lib/Date/Format.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Format.pm 755 0 0
+file /spec/lib/Date/Language/Finnish.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Finnish.pm 755 0 0
+file /spec/lib/Date/Language/English.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/English.pm 755 0 0
+file /spec/lib/Date/Language/Italian.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Italian.pm 755 0 0
+file /spec/lib/Date/Language/Czech.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Czech.pm 755 0 0
+file /spec/lib/Date/Language/German.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/German.pm 755 0 0
+file /spec/lib/Date/Language/Dutch.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Dutch.pm 755 0 0
+file /spec/lib/Date/Language/Brazilian.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Brazilian.pm 755 0 0
+file /spec/lib/Date/Language/TigrinyaEthiopian.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/TigrinyaEthiopian.pm 755 0 0
+file /spec/lib/Date/Language/Icelandic.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Icelandic.pm 755 0 0
+file /spec/lib/Date/Language/Chinese.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Chinese.pm 755 0 0
+file /spec/lib/Date/Language/Somali.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Somali.pm 755 0 0
+file /spec/lib/Date/Language/Bulgarian.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Bulgarian.pm 755 0 0
+file /spec/lib/Date/Language/Norwegian.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Norwegian.pm 755 0 0
+file /spec/lib/Date/Language/Hungarian.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Hungarian.pm 755 0 0
+file /spec/lib/Date/Language/TigrinyaEritrean.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/TigrinyaEritrean.pm 755 0 0
+file /spec/lib/Date/Language/Romanian.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Romanian.pm 755 0 0
+file /spec/lib/Date/Language/Chinese_GB.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Chinese_GB.pm 755 0 0
+file /spec/lib/Date/Language/Gedeo.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Gedeo.pm 755 0 0
+file /spec/lib/Date/Language/Russian_koi8r.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Russian_koi8r.pm 755 0 0
+file /spec/lib/Date/Language/Afar.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Afar.pm 755 0 0
+file /spec/lib/Date/Language/Russian.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Russian.pm 755 0 0
+file /spec/lib/Date/Language/Russian_cp1251.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Russian_cp1251.pm 755 0 0
+file /spec/lib/Date/Language/Danish.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Danish.pm 755 0 0
+file /spec/lib/Date/Language/Tigrinya.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Tigrinya.pm 755 0 0
+file /spec/lib/Date/Language/Spanish.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Spanish.pm 755 0 0
+file /spec/lib/Date/Language/Austrian.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Austrian.pm 755 0 0
+file /spec/lib/Date/Language/Turkish.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Turkish.pm 755 0 0
+file /spec/lib/Date/Language/French.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/French.pm 755 0 0
+file /spec/lib/Date/Language/Greek.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Greek.pm 755 0 0
+file /spec/lib/Date/Language/Amharic.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Amharic.pm 755 0 0
+file /spec/lib/Date/Language/Oromo.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Oromo.pm 755 0 0
+file /spec/lib/Date/Language/Swedish.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Swedish.pm 755 0 0
+file /spec/lib/Date/Language/Sidama.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language/Sidama.pm 755 0 0
+file /spec/lib/Date/Parse.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Parse.pm 755 0 0
+file /spec/lib/Date/Language.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Date/Language.pm 755 0 0
+file /spec/lib/locale.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/locale.pm 755 0 0
+file /spec/lib/Carp.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Carp.pm 755 0 0
+file /spec/lib/Attribute/Handlers.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Attribute/Handlers.pm 755 0 0
+file /spec/lib/deprecate.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/deprecate.pm 755 0 0
+file /spec/lib/Exporter.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Exporter.pm 755 0 0
+file /spec/lib/qprint.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/qprint.pl 755 0 0
+file /spec/lib/mhidxrc.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhidxrc.pl 755 0 0
+file /spec/lib/XSLoader.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/XSLoader.pm 755 0 0
+file /spec/lib/UNIVERSAL.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/UNIVERSAL.pm 755 0 0
+file /spec/lib/DB_File.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/DB_File.pm 755 0 0
+file /spec/lib/FileCache.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/FileCache.pm 755 0 0
+file /spec/lib/List/Util.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/List/Util.pm 755 0 0
+file /spec/lib/List/Util/XS.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/List/Util/XS.pm 755 0 0
+file /spec/lib/Mail/Util.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/Util.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/PerMsgStatus.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/PerMsgStatus.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/MailingList.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/MailingList.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/NetSet.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/NetSet.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/EvalTests.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/EvalTests.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/BayesStore.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/BayesStore.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/Dns.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/Dns.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/Replier.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/Replier.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/Util.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/Util.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/EncappedMIME.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/EncappedMIME.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/Locker.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/Locker.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/NoLocker.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/NoLocker.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/ArchiveIterator.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/ArchiveIterator.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/PersistentAddrList.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/PersistentAddrList.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/Received.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/Received.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/SHA1.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/SHA1.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/Conf.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/Conf.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/Bayes.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/Bayes.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/PhraseFreqs.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/PhraseFreqs.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/NoMailAudit.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/NoMailAudit.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/DBBasedAddrList.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/DBBasedAddrList.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/Locales.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/Locales.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/Reporter.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/Reporter.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/AutoWhitelist.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/AutoWhitelist.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/Message.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/Message.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/PerMsgLearner.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/PerMsgLearner.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/AuditMessage.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/AuditMessage.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/HTML.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/HTML.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/CmdLearn.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/CmdLearn.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/EncappedMessage.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/EncappedMessage.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin/TextCat.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin/TextCat.pm 755 0 0
+file /spec/lib/Mail/Header.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/Header.pm 755 0 0
+file /spec/lib/Mail/SpamAssassin.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Mail/SpamAssassin.pm 755 0 0
+file /spec/lib/Cwd.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Cwd.pm 755 0 0
+file /spec/lib/mro.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/mro.pm 755 0 0
+file /spec/lib/base.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/base.pm 755 0 0
+file /spec/lib/Module/CoreList.pod ${SPEC2017_INPUT_DIR}/perlbench/lib/Module/CoreList.pod 755 0 0
+file /spec/lib/Module/CoreList/TieHashDelta.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Module/CoreList/TieHashDelta.pm 755 0 0
+file /spec/lib/Module/CoreList/Utils.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Module/CoreList/Utils.pm 755 0 0
+file /spec/lib/Module/CoreList.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Module/CoreList.pm 755 0 0
+file /spec/lib/Math/BigFloat/Trace.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Math/BigFloat/Trace.pm 755 0 0
+file /spec/lib/Math/Complex.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Math/Complex.pm 755 0 0
+file /spec/lib/Math/BigRat.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Math/BigRat.pm 755 0 0
+file /spec/lib/Math/Trig.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Math/Trig.pm 755 0 0
+file /spec/lib/Math/BigInt/CalcEmu.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Math/BigInt/CalcEmu.pm 755 0 0
+file /spec/lib/Math/BigInt/Trace.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Math/BigInt/Trace.pm 755 0 0
+file /spec/lib/Math/BigInt/Calc.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Math/BigInt/Calc.pm 755 0 0
+file /spec/lib/Math/BigInt.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Math/BigInt.pm 755 0 0
+file /spec/lib/Math/BigFloat.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Math/BigFloat.pm 755 0 0
+file /spec/lib/version/regex.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/version/regex.pm 755 0 0
+file /spec/lib/version/vpp.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/version/vpp.pm 755 0 0
+file /spec/lib/less.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/less.pm 755 0 0
+file /spec/lib/MIME/Base64.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MIME/Base64.pm 755 0 0
+file /spec/lib/MIME/QuotedPrint.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MIME/QuotedPrint.pm 755 0 0
+file /spec/lib/constant.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/constant.pm 755 0 0
+file /spec/lib/SelfLoader.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/SelfLoader.pm 755 0 0
+file /spec/lib/FileHandle.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/FileHandle.pm 755 0 0
+file /spec/lib/mhdysub.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhdysub.pl 755 0 0
+file /spec/lib/mhmsgfile.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhmsgfile.pl 755 0 0
+file /spec/lib/mhinit.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhinit.pl 755 0 0
+file /spec/lib/arybase.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/arybase.pm 755 0 0
+file /spec/lib/mungewords ${SPEC2017_INPUT_DIR}/perlbench/lib/mungewords 755 0 0
+file /spec/lib/mhtime.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhtime.pl 755 0 0
+file /spec/lib/HTML/TokeParser.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/HTML/TokeParser.pm 755 0 0
+file /spec/lib/HTML/Tagset.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/HTML/Tagset.pm 755 0 0
+file /spec/lib/HTML/Entities.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/HTML/Entities.pm 755 0 0
+file /spec/lib/HTML/Filter.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/HTML/Filter.pm 755 0 0
+file /spec/lib/HTML/PullParser.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/HTML/PullParser.pm 755 0 0
+file /spec/lib/HTML/Parser.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/HTML/Parser.pm 755 0 0
+file /spec/lib/HTML/HeadParser.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/HTML/HeadParser.pm 755 0 0
+file /spec/lib/HTML/LinkExtor.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/HTML/LinkExtor.pm 755 0 0
+file /spec/lib/_charnames.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/_charnames.pm 755 0 0
+file /spec/lib/mhlock.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhlock.pl 755 0 0
+file /spec/lib/File/CheckTree.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/CheckTree.pm 755 0 0
+file /spec/lib/File/GlobMapper.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/GlobMapper.pm 755 0 0
+file /spec/lib/File/Spec.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/Spec.pm 755 0 0
+file /spec/lib/File/DosGlob.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/DosGlob.pm 755 0 0
+file /spec/lib/File/Path.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/Path.pm 755 0 0
+file /spec/lib/File/Spec/Win32.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/Spec/Win32.pm 755 0 0
+file /spec/lib/File/Spec/Functions.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/Spec/Functions.pm 755 0 0
+file /spec/lib/File/Spec/Cygwin.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/Spec/Cygwin.pm 755 0 0
+file /spec/lib/File/Spec/Epoc.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/Spec/Epoc.pm 755 0 0
+file /spec/lib/File/Spec/OS2.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/Spec/OS2.pm 755 0 0
+file /spec/lib/File/Spec/Unix.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/Spec/Unix.pm 755 0 0
+file /spec/lib/File/Spec/Mac.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/Spec/Mac.pm 755 0 0
+file /spec/lib/File/Spec/VMS.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/Spec/VMS.pm 755 0 0
+file /spec/lib/File/Copy.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/Copy.pm 755 0 0
+file /spec/lib/File/Glob.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/Glob.pm 755 0 0
+file /spec/lib/File/Temp.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/Temp.pm 755 0 0
+file /spec/lib/File/Basename.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/Basename.pm 755 0 0
+file /spec/lib/File/Fetch.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/Fetch.pm 755 0 0
+file /spec/lib/File/stat.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/stat.pm 755 0 0
+file /spec/lib/File/Compare.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/File/Compare.pm 755 0 0
+file /spec/lib/mhmimetypes.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhmimetypes.pl 755 0 0
+file /spec/lib/mhexternal.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhexternal.pl 755 0 0
+file /spec/lib/Config.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Config.pm 755 0 0
+file /spec/lib/Fcntl.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Fcntl.pm 755 0 0
+file /spec/lib/Scalar/Util.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Scalar/Util.pm 755 0 0
+file /spec/lib/overload/numbers.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/overload/numbers.pm 755 0 0
+file /spec/lib/perl5db.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/perl5db.pl 755 0 0
+file /spec/lib/Perl/OSType.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Perl/OSType.pm 755 0 0
+file /spec/lib/DynaLoader.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/DynaLoader.pm 755 0 0
+file /spec/lib/ewhutil.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/ewhutil.pl 755 0 0
+file /spec/lib/warnings.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/warnings.pm 755 0 0
+file /spec/lib/PerlIO/via/QuotedPrint.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/PerlIO/via/QuotedPrint.pm 755 0 0
+file /spec/lib/PerlIO/via.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/PerlIO/via.pm 755 0 0
+file /spec/lib/PerlIO/scalar.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/PerlIO/scalar.pm 755 0 0
+file /spec/lib/Time/HiRes.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Time/HiRes.pm 755 0 0
+file /spec/lib/Time/Local.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Time/Local.pm 755 0 0
+file /spec/lib/Time/tm.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Time/tm.pm 755 0 0
+file /spec/lib/Time/localtime.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Time/localtime.pm 755 0 0
+file /spec/lib/Time/gmtime.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Time/gmtime.pm 755 0 0
+file /spec/lib/Time/Zone.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Time/Zone.pm 755 0 0
+file /spec/lib/unicore/lib/NFDQC/N.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/NFDQC/N.pl 755 0 0
+file /spec/lib/unicore/lib/NFDQC/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/NFDQC/Y.pl 755 0 0
+file /spec/lib/unicore/lib/CI/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/CI/Y.pl 755 0 0
+file /spec/lib/unicore/lib/In/5_0.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/In/5_0.pl 755 0 0
+file /spec/lib/unicore/lib/In/5_1.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/In/5_1.pl 755 0 0
+file /spec/lib/unicore/lib/In/5_2.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/In/5_2.pl 755 0 0
+file /spec/lib/unicore/lib/In/2_0.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/In/2_0.pl 755 0 0
+file /spec/lib/unicore/lib/In/7_0.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/In/7_0.pl 755 0 0
+file /spec/lib/unicore/lib/In/6_1.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/In/6_1.pl 755 0 0
+file /spec/lib/unicore/lib/In/6_0.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/In/6_0.pl 755 0 0
+file /spec/lib/unicore/lib/In/4_1.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/In/4_1.pl 755 0 0
+file /spec/lib/unicore/lib/In/3_2.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/In/3_2.pl 755 0 0
+file /spec/lib/unicore/lib/In/4_0.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/In/4_0.pl 755 0 0
+file /spec/lib/unicore/lib/In/6_2.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/In/6_2.pl 755 0 0
+file /spec/lib/unicore/lib/In/3_1.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/In/3_1.pl 755 0 0
+file /spec/lib/unicore/lib/In/3_0.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/In/3_0.pl 755 0 0
+file /spec/lib/unicore/lib/In/2_1.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/In/2_1.pl 755 0 0
+file /spec/lib/unicore/lib/In/6_3.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/In/6_3.pl 755 0 0
+file /spec/lib/unicore/lib/DI/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/DI/Y.pl 755 0 0
+file /spec/lib/unicore/lib/XIDS/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/XIDS/Y.pl 755 0 0
+file /spec/lib/unicore/lib/BidiM/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/BidiM/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Cased/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Cased/Y.pl 755 0 0
+file /spec/lib/unicore/lib/PatSyn/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/PatSyn/Y.pl 755 0 0
+file /spec/lib/unicore/lib/STerm/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/STerm/Y.pl 755 0 0
+file /spec/lib/unicore/lib/SB/XX.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/SB/XX.pl 755 0 0
+file /spec/lib/unicore/lib/SB/LE.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/SB/LE.pl 755 0 0
+file /spec/lib/unicore/lib/SB/CL.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/SB/CL.pl 755 0 0
+file /spec/lib/unicore/lib/SB/ST.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/SB/ST.pl 755 0 0
+file /spec/lib/unicore/lib/SB/SC.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/SB/SC.pl 755 0 0
+file /spec/lib/unicore/lib/SB/AT.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/SB/AT.pl 755 0 0
+file /spec/lib/unicore/lib/SB/UP.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/SB/UP.pl 755 0 0
+file /spec/lib/unicore/lib/SB/LO.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/SB/LO.pl 755 0 0
+file /spec/lib/unicore/lib/SB/FO.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/SB/FO.pl 755 0 0
+file /spec/lib/unicore/lib/SB/EX.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/SB/EX.pl 755 0 0
+file /spec/lib/unicore/lib/SB/NU.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/SB/NU.pl 755 0 0
+file /spec/lib/unicore/lib/SB/Sp.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/SB/Sp.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Ll.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Ll.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/L.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/L.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Cf.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Cf.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Pf.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Pf.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/S.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/S.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/No.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/No.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Mc.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Mc.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Pd.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Pd.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/P.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/P.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Mn.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Mn.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Nd.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Nd.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Lu.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Lu.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Zs.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Zs.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Z.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Z.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Cn.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Cn.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/N.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/N.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Pe.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Pe.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Me.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Me.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/C.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/C.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Nl.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Nl.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Lm.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Lm.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Sc.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Sc.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Sm.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Sm.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Ps.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Ps.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Lo.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Lo.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/LC.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/LC.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/So.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/So.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Pi.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Pi.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/M.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/M.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Po.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Po.pl 755 0 0
+file /spec/lib/unicore/lib/Gc/Sk.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Gc/Sk.pl 755 0 0
+file /spec/lib/unicore/lib/CWCM/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/CWCM/Y.pl 755 0 0
+file /spec/lib/unicore/lib/QMark/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/QMark/Y.pl 755 0 0
+file /spec/lib/unicore/lib/BidiC/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/BidiC/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Lower/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Lower/Y.pl 755 0 0
+file /spec/lib/unicore/lib/UIdeo/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/UIdeo/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Alpha/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Alpha/Y.pl 755 0 0
+file /spec/lib/unicore/lib/LOE/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/LOE/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Math/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Math/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Jt/D.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jt/D.pl 755 0 0
+file /spec/lib/unicore/lib/Jt/R.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jt/R.pl 755 0 0
+file /spec/lib/unicore/lib/Jt/T.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jt/T.pl 755 0 0
+file /spec/lib/unicore/lib/Jt/C.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jt/C.pl 755 0 0
+file /spec/lib/unicore/lib/Jt/U.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jt/U.pl 755 0 0
+file /spec/lib/unicore/lib/Bc/L.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Bc/L.pl 755 0 0
+file /spec/lib/unicore/lib/Bc/ON.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Bc/ON.pl 755 0 0
+file /spec/lib/unicore/lib/Bc/AN.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Bc/AN.pl 755 0 0
+file /spec/lib/unicore/lib/Bc/R.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Bc/R.pl 755 0 0
+file /spec/lib/unicore/lib/Bc/EN.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Bc/EN.pl 755 0 0
+file /spec/lib/unicore/lib/Bc/ET.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Bc/ET.pl 755 0 0
+file /spec/lib/unicore/lib/Bc/AL.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Bc/AL.pl 755 0 0
+file /spec/lib/unicore/lib/Bc/B.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Bc/B.pl 755 0 0
+file /spec/lib/unicore/lib/Bc/BN.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Bc/BN.pl 755 0 0
+file /spec/lib/unicore/lib/Bc/WS.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Bc/WS.pl 755 0 0
+file /spec/lib/unicore/lib/Bc/NSM.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Bc/NSM.pl 755 0 0
+file /spec/lib/unicore/lib/Bc/ES.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Bc/ES.pl 755 0 0
+file /spec/lib/unicore/lib/Bc/CS.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Bc/CS.pl 755 0 0
+file /spec/lib/unicore/lib/NFCQC/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/NFCQC/Y.pl 755 0 0
+file /spec/lib/unicore/lib/NFCQC/M.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/NFCQC/M.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Sinh.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Sinh.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Kana.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Kana.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Grek.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Grek.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Armn.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Armn.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Beng.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Beng.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Cham.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Cham.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Guru.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Guru.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Dupl.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Dupl.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Geor.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Geor.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Zinh.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Zinh.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Cprt.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Cprt.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Knda.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Knda.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Talu.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Talu.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Arab.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Arab.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Hira.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Hira.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Linb.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Linb.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Taml.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Taml.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Ethi.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Ethi.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Hang.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Hang.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Cyrl.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Cyrl.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Han.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Han.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Mlym.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Mlym.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Zzzz.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Zzzz.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Lana.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Lana.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Limb.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Limb.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Lao.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Lao.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Khar.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Khar.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Deva.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Deva.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Zyyy.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Zyyy.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Telu.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Telu.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Hebr.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Hebr.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Mong.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Mong.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Khmr.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Khmr.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Hmng.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Hmng.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Latn.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Latn.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Gran.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Gran.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Gujr.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Gujr.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Orya.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Orya.pl 755 0 0
+file /spec/lib/unicore/lib/Sc/Tibt.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Sc/Tibt.pl 755 0 0
+file /spec/lib/unicore/lib/GrBase/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/GrBase/Y.pl 755 0 0
+file /spec/lib/unicore/lib/NFKDQC/N.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/NFKDQC/N.pl 755 0 0
+file /spec/lib/unicore/lib/NFKDQC/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/NFKDQC/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Ideo/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Ideo/Y.pl 755 0 0
+file /spec/lib/unicore/lib/CWCF/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/CWCF/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/Assigned.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/Assigned.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/Print.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/Print.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/Blank.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/Blank.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/_PerlFol.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/_PerlFol.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/_PerlCha.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/_PerlCha.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/Alnum.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/Alnum.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/SpacePer.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/SpacePer.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/Graph.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/Graph.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/_PerlIDC.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/_PerlIDC.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/_PerlPro.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/_PerlPro.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/Word.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/Word.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/_PerlQuo.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/_PerlQuo.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/_PerlPr2.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/_PerlPr2.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/_PerlCh2.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/_PerlCh2.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/_PerlIDS.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/_PerlIDS.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/Title.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/Title.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/XPosixPu.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/XPosixPu.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/PerlWord.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/PerlWord.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/PosixPun.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/PosixPun.pl 755 0 0
+file /spec/lib/unicore/lib/Perl/_PerlAny.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Perl/_PerlAny.pl 755 0 0
+file /spec/lib/unicore/lib/Dt/Iso.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Dt/Iso.pl 755 0 0
+file /spec/lib/unicore/lib/Dt/Fin.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Dt/Fin.pl 755 0 0
+file /spec/lib/unicore/lib/Dt/Com.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Dt/Com.pl 755 0 0
+file /spec/lib/unicore/lib/Dt/Vert.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Dt/Vert.pl 755 0 0
+file /spec/lib/unicore/lib/Dt/Init.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Dt/Init.pl 755 0 0
+file /spec/lib/unicore/lib/Dt/Enc.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Dt/Enc.pl 755 0 0
+file /spec/lib/unicore/lib/Dt/Nar.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Dt/Nar.pl 755 0 0
+file /spec/lib/unicore/lib/Dt/Font.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Dt/Font.pl 755 0 0
+file /spec/lib/unicore/lib/Dt/NonCanon.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Dt/NonCanon.pl 755 0 0
+file /spec/lib/unicore/lib/Dt/Nb.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Dt/Nb.pl 755 0 0
+file /spec/lib/unicore/lib/Dt/Sqr.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Dt/Sqr.pl 755 0 0
+file /spec/lib/unicore/lib/Dt/Med.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Dt/Med.pl 755 0 0
+file /spec/lib/unicore/lib/Dt/Sup.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Dt/Sup.pl 755 0 0
+file /spec/lib/unicore/lib/Dt/Sub.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Dt/Sub.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Sinh.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Sinh.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Kana.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Kana.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Syrc.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Syrc.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Phlp.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Phlp.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Tirh.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Tirh.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Grek.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Grek.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Bopo.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Bopo.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Armn.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Armn.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Beng.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Beng.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Guru.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Guru.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Dupl.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Dupl.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Geor.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Geor.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Tagb.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Tagb.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Zinh.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Zinh.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Cprt.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Cprt.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Knda.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Knda.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Arab.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Arab.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Takr.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Takr.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Hira.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Hira.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Linb.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Linb.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Taml.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Taml.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Mymr.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Mymr.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Hang.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Hang.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Cyrl.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Cyrl.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Han.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Han.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Mlym.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Mlym.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Limb.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Limb.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Thaa.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Thaa.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Deva.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Deva.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Zyyy.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Zyyy.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Copt.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Copt.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Telu.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Telu.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Mong.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Mong.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Cakm.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Cakm.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Latn.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Latn.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Gran.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Gran.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Gujr.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Gujr.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Orya.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Orya.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Yi.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Yi.pl 755 0 0
+file /spec/lib/unicore/lib/Scx/Sind.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Scx/Sind.pl 755 0 0
+file /spec/lib/unicore/lib/GCB/XX.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/GCB/XX.pl 755 0 0
+file /spec/lib/unicore/lib/GCB/CN.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/GCB/CN.pl 755 0 0
+file /spec/lib/unicore/lib/GCB/SM.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/GCB/SM.pl 755 0 0
+file /spec/lib/unicore/lib/GCB/LVT.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/GCB/LVT.pl 755 0 0
+file /spec/lib/unicore/lib/GCB/EX.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/GCB/EX.pl 755 0 0
+file /spec/lib/unicore/lib/GCB/LV.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/GCB/LV.pl 755 0 0
+file /spec/lib/unicore/lib/Upper/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Upper/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Dash/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Dash/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Dep/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Dep/Y.pl 755 0 0
+file /spec/lib/unicore/lib/CWT/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/CWT/Y.pl 755 0 0
+file /spec/lib/unicore/lib/NFKCQC/N.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/NFKCQC/N.pl 755 0 0
+file /spec/lib/unicore/lib/NFKCQC/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/NFKCQC/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Lb/XX.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Lb/XX.pl 755 0 0
+file /spec/lib/unicore/lib/Lb/SA.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Lb/SA.pl 755 0 0
+file /spec/lib/unicore/lib/Lb/BA.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Lb/BA.pl 755 0 0
+file /spec/lib/unicore/lib/Lb/ID.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Lb/ID.pl 755 0 0
+file /spec/lib/unicore/lib/Lb/AI.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Lb/AI.pl 755 0 0
+file /spec/lib/unicore/lib/Lb/GL.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Lb/GL.pl 755 0 0
+file /spec/lib/unicore/lib/Lb/PO.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Lb/PO.pl 755 0 0
+file /spec/lib/unicore/lib/Lb/CL.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Lb/CL.pl 755 0 0
+file /spec/lib/unicore/lib/Lb/PR.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Lb/PR.pl 755 0 0
+file /spec/lib/unicore/lib/Lb/IS.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Lb/IS.pl 755 0 0
+file /spec/lib/unicore/lib/Lb/NS.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Lb/NS.pl 755 0 0
+file /spec/lib/unicore/lib/Lb/CJ.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Lb/CJ.pl 755 0 0
+file /spec/lib/unicore/lib/Lb/AL.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Lb/AL.pl 755 0 0
+file /spec/lib/unicore/lib/Lb/BB.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Lb/BB.pl 755 0 0
+file /spec/lib/unicore/lib/Lb/CM.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Lb/CM.pl 755 0 0
+file /spec/lib/unicore/lib/Lb/EX.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Lb/EX.pl 755 0 0
+file /spec/lib/unicore/lib/Lb/QU.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Lb/QU.pl 755 0 0
+file /spec/lib/unicore/lib/Lb/OP.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Lb/OP.pl 755 0 0
+file /spec/lib/unicore/lib/CWKCF/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/CWKCF/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Nt/Nu.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nt/Nu.pl 755 0 0
+file /spec/lib/unicore/lib/Nt/None.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nt/None.pl 755 0 0
+file /spec/lib/unicore/lib/Nt/Di.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nt/Di.pl 755 0 0
+file /spec/lib/unicore/lib/CWU/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/CWU/Y.pl 755 0 0
+file /spec/lib/unicore/lib/WB/XX.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/WB/XX.pl 755 0 0
+file /spec/lib/unicore/lib/WB/MN.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/WB/MN.pl 755 0 0
+file /spec/lib/unicore/lib/WB/MB.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/WB/MB.pl 755 0 0
+file /spec/lib/unicore/lib/WB/LE.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/WB/LE.pl 755 0 0
+file /spec/lib/unicore/lib/WB/ML.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/WB/ML.pl 755 0 0
+file /spec/lib/unicore/lib/WB/KA.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/WB/KA.pl 755 0 0
+file /spec/lib/unicore/lib/WB/FO.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/WB/FO.pl 755 0 0
+file /spec/lib/unicore/lib/WB/EX.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/WB/EX.pl 755 0 0
+file /spec/lib/unicore/lib/WB/NU.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/WB/NU.pl 755 0 0
+file /spec/lib/unicore/lib/WB/HL.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/WB/HL.pl 755 0 0
+file /spec/lib/unicore/lib/NChar/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/NChar/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Ccc/NR.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Ccc/NR.pl 755 0 0
+file /spec/lib/unicore/lib/Ccc/AR.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Ccc/AR.pl 755 0 0
+file /spec/lib/unicore/lib/Ccc/BR.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Ccc/BR.pl 755 0 0
+file /spec/lib/unicore/lib/Ccc/DB.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Ccc/DB.pl 755 0 0
+file /spec/lib/unicore/lib/Ccc/OV.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Ccc/OV.pl 755 0 0
+file /spec/lib/unicore/lib/Ccc/B.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Ccc/B.pl 755 0 0
+file /spec/lib/unicore/lib/Ccc/A.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Ccc/A.pl 755 0 0
+file /spec/lib/unicore/lib/Ccc/ATAR.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Ccc/ATAR.pl 755 0 0
+file /spec/lib/unicore/lib/Ccc/NK.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Ccc/NK.pl 755 0 0
+file /spec/lib/unicore/lib/Ccc/VR.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Ccc/VR.pl 755 0 0
+file /spec/lib/unicore/lib/PatWS/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/PatWS/Y.pl 755 0 0
+file /spec/lib/unicore/lib/CE/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/CE/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Hyphen/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Hyphen/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/1000.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/1000.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/12.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/12.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/18.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/18.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/1_4.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/1_4.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/1_2.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/1_2.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/13.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/13.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/90.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/90.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/5.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/5.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/1_8.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/1_8.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/500.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/500.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/30.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/30.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/10.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/10.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/40.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/40.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/15.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/15.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/11.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/11.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/19.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/19.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/9.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/9.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/0.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/0.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/50.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/50.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/300.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/300.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/100.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/100.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/4.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/4.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/8.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/8.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/70.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/70.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/5000.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/5000.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/7.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/7.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/60.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/60.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/17.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/17.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/6.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/6.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/2_3.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/2_3.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/14.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/14.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/10000.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/10000.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/3.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/3.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/1_3.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/1_3.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/50000.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/50000.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/900.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/900.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/20.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/20.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/16.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/16.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/80.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/80.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/3_4.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/3_4.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/1.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/1.pl 755 0 0
+file /spec/lib/unicore/lib/Nv/2.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Nv/2.pl 755 0 0
+file /spec/lib/unicore/lib/IDS/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/IDS/Y.pl 755 0 0
+file /spec/lib/unicore/lib/SD/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/SD/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Age/V60.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Age/V60.pl 755 0 0
+file /spec/lib/unicore/lib/Age/NA.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Age/NA.pl 755 0 0
+file /spec/lib/unicore/lib/Age/V30.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Age/V30.pl 755 0 0
+file /spec/lib/unicore/lib/Age/V32.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Age/V32.pl 755 0 0
+file /spec/lib/unicore/lib/Age/V31.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Age/V31.pl 755 0 0
+file /spec/lib/unicore/lib/Age/V40.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Age/V40.pl 755 0 0
+file /spec/lib/unicore/lib/Age/V52.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Age/V52.pl 755 0 0
+file /spec/lib/unicore/lib/Age/V20.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Age/V20.pl 755 0 0
+file /spec/lib/unicore/lib/Age/V50.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Age/V50.pl 755 0 0
+file /spec/lib/unicore/lib/Age/V61.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Age/V61.pl 755 0 0
+file /spec/lib/unicore/lib/Age/V70.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Age/V70.pl 755 0 0
+file /spec/lib/unicore/lib/Age/V51.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Age/V51.pl 755 0 0
+file /spec/lib/unicore/lib/Age/V41.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Age/V41.pl 755 0 0
+file /spec/lib/unicore/lib/Age/V11.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Age/V11.pl 755 0 0
+file /spec/lib/unicore/lib/Bpt/N.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Bpt/N.pl 755 0 0
+file /spec/lib/unicore/lib/Bpt/C.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Bpt/C.pl 755 0 0
+file /spec/lib/unicore/lib/Bpt/O.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Bpt/O.pl 755 0 0
+file /spec/lib/unicore/lib/Blk/NB.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Blk/NB.pl 755 0 0
+file /spec/lib/unicore/lib/Jg/FarsiYeh.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jg/FarsiYeh.pl 755 0 0
+file /spec/lib/unicore/lib/Jg/Seen.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jg/Seen.pl 755 0 0
+file /spec/lib/unicore/lib/Jg/Waw.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jg/Waw.pl 755 0 0
+file /spec/lib/unicore/lib/Jg/Beh.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jg/Beh.pl 755 0 0
+file /spec/lib/unicore/lib/Jg/Gaf.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jg/Gaf.pl 755 0 0
+file /spec/lib/unicore/lib/Jg/NoJoinin.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jg/NoJoinin.pl 755 0 0
+file /spec/lib/unicore/lib/Jg/Reh.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jg/Reh.pl 755 0 0
+file /spec/lib/unicore/lib/Jg/Alef.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jg/Alef.pl 755 0 0
+file /spec/lib/unicore/lib/Jg/Sad.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jg/Sad.pl 755 0 0
+file /spec/lib/unicore/lib/Jg/Feh.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jg/Feh.pl 755 0 0
+file /spec/lib/unicore/lib/Jg/Ain.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jg/Ain.pl 755 0 0
+file /spec/lib/unicore/lib/Jg/Lam.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jg/Lam.pl 755 0 0
+file /spec/lib/unicore/lib/Jg/Dal.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jg/Dal.pl 755 0 0
+file /spec/lib/unicore/lib/Jg/Hah.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jg/Hah.pl 755 0 0
+file /spec/lib/unicore/lib/Jg/Qaf.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jg/Qaf.pl 755 0 0
+file /spec/lib/unicore/lib/Jg/Yeh.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Jg/Yeh.pl 755 0 0
+file /spec/lib/unicore/lib/CompEx/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/CompEx/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Dia/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Dia/Y.pl 755 0 0
+file /spec/lib/unicore/lib/IDC/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/IDC/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Ea/Na.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Ea/Na.pl 755 0 0
+file /spec/lib/unicore/lib/Ea/H.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Ea/H.pl 755 0 0
+file /spec/lib/unicore/lib/Ea/N.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Ea/N.pl 755 0 0
+file /spec/lib/unicore/lib/Ea/A.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Ea/A.pl 755 0 0
+file /spec/lib/unicore/lib/Ea/W.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Ea/W.pl 755 0 0
+file /spec/lib/unicore/lib/CWL/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/CWL/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Ext/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Ext/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Hex/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Hex/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Term/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Term/Y.pl 755 0 0
+file /spec/lib/unicore/lib/XIDC/Y.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/XIDC/Y.pl 755 0 0
+file /spec/lib/unicore/lib/Hst/NA.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/lib/Hst/NA.pl 755 0 0
+file /spec/lib/unicore/CombiningClass.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/CombiningClass.pl 755 0 0
+file /spec/lib/unicore/Blocks.txt ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/Blocks.txt 755 0 0
+file /spec/lib/unicore/SpecialCasing.txt ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/SpecialCasing.txt 755 0 0
+file /spec/lib/unicore/version ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/version 755 0 0
+file /spec/lib/unicore/Heavy.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/Heavy.pl 755 0 0
+file /spec/lib/unicore/UCD.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/UCD.pl 755 0 0
+file /spec/lib/unicore/Name.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/Name.pl 755 0 0
+file /spec/lib/unicore/Decomposition.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/Decomposition.pl 755 0 0
+file /spec/lib/unicore/Name.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/Name.pm 755 0 0
+file /spec/lib/unicore/NamedSequences.txt ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/NamedSequences.txt 755 0 0
+file /spec/lib/unicore/To/Nv.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Nv.pl 755 0 0
+file /spec/lib/unicore/To/NameAlia.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/NameAlia.pl 755 0 0
+file /spec/lib/unicore/To/Nt.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Nt.pl 755 0 0
+file /spec/lib/unicore/To/Scx.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Scx.pl 755 0 0
+file /spec/lib/unicore/To/Isc.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Isc.pl 755 0 0
+file /spec/lib/unicore/To/Cf.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Cf.pl 755 0 0
+file /spec/lib/unicore/To/Na1.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Na1.pl 755 0 0
+file /spec/lib/unicore/To/NFKDQC.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/NFKDQC.pl 755 0 0
+file /spec/lib/unicore/To/Fold.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Fold.pl 755 0 0
+file /spec/lib/unicore/To/Age.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Age.pl 755 0 0
+file /spec/lib/unicore/To/WB.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/WB.pl 755 0 0
+file /spec/lib/unicore/To/Jg.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Jg.pl 755 0 0
+file /spec/lib/unicore/To/Bc.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Bc.pl 755 0 0
+file /spec/lib/unicore/To/Uc.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Uc.pl 755 0 0
+file /spec/lib/unicore/To/GCB.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/GCB.pl 755 0 0
+file /spec/lib/unicore/To/Jt.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Jt.pl 755 0 0
+file /spec/lib/unicore/To/SB.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/SB.pl 755 0 0
+file /spec/lib/unicore/To/NFDQC.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/NFDQC.pl 755 0 0
+file /spec/lib/unicore/To/Digit.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Digit.pl 755 0 0
+file /spec/lib/unicore/To/Tc.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Tc.pl 755 0 0
+file /spec/lib/unicore/To/Lower.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Lower.pl 755 0 0
+file /spec/lib/unicore/To/NFKCCF.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/NFKCCF.pl 755 0 0
+file /spec/lib/unicore/To/NFCQC.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/NFCQC.pl 755 0 0
+file /spec/lib/unicore/To/NFKCQC.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/NFKCQC.pl 755 0 0
+file /spec/lib/unicore/To/Sc.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Sc.pl 755 0 0
+file /spec/lib/unicore/To/Hst.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Hst.pl 755 0 0
+file /spec/lib/unicore/To/Bpt.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Bpt.pl 755 0 0
+file /spec/lib/unicore/To/Ea.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Ea.pl 755 0 0
+file /spec/lib/unicore/To/Gc.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Gc.pl 755 0 0
+file /spec/lib/unicore/To/Bpb.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Bpb.pl 755 0 0
+file /spec/lib/unicore/To/Title.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Title.pl 755 0 0
+file /spec/lib/unicore/To/Bmg.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Bmg.pl 755 0 0
+file /spec/lib/unicore/To/Lc.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Lc.pl 755 0 0
+file /spec/lib/unicore/To/Lb.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Lb.pl 755 0 0
+file /spec/lib/unicore/To/PerlDeci.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/PerlDeci.pl 755 0 0
+file /spec/lib/unicore/To/Upper.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/unicore/To/Upper.pl 755 0 0
+file /spec/lib/AutoLoader.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/AutoLoader.pm 755 0 0
+file /spec/lib/mhamain.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhamain.pl 755 0 0
+file /spec/lib/mhutil.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhutil.pl 755 0 0
+file /spec/lib/compare.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/compare.pm 755 0 0
+file /spec/lib/Digest.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Digest.pm 755 0 0
+file /spec/lib/diagnostics.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/diagnostics.pm 755 0 0
+file /spec/lib/Errno.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Errno.pm 755 0 0
+file /spec/lib/overload.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/overload.pm 755 0 0
+file /spec/lib/mhtxtplain.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhtxtplain.pl 755 0 0
+file /spec/lib/mhnull.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhnull.pl 755 0 0
+file /spec/lib/mhtxthtml.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhtxthtml.pl 755 0 0
+file /spec/lib/mhusage.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhusage.pl 755 0 0
+file /spec/lib/mhrmm.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhrmm.pl 755 0 0
+file /spec/lib/Symbol.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Symbol.pm 755 0 0
+file /spec/lib/lib.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/lib.pm 755 0 0
+file /spec/lib/ham.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/ham.pl 755 0 0
+file /spec/lib/utf8_heavy.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/utf8_heavy.pl 755 0 0
+file /spec/lib/mhindex.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhindex.pl 755 0 0
+file /spec/lib/mhtxttsv.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhtxttsv.pl 755 0 0
+file /spec/lib/Text/Tabs.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Text/Tabs.pm 755 0 0
+file /spec/lib/Text/Wrap.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Text/Wrap.pm 755 0 0
+file /spec/lib/if.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/if.pm 755 0 0
+file /spec/lib/bigrat.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/bigrat.pm 755 0 0
+file /spec/lib/mhsingle.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhsingle.pl 755 0 0
+file /spec/lib/specdiff.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/specdiff.pm 755 0 0
+file /spec/lib/vmsish.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/vmsish.pm 755 0 0
+file /spec/lib/utf8.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/utf8.pm 755 0 0
+file /spec/lib/Exporter/Heavy.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Exporter/Heavy.pm 755 0 0
+file /spec/lib/bigint.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/bigint.pm 755 0 0
+file /spec/lib/SelectSaver.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/SelectSaver.pm 755 0 0
+file /spec/lib/Getopt/Long.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Getopt/Long.pm 755 0 0
+file /spec/lib/Getopt/Std.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Getopt/Std.pm 755 0 0
+file /spec/lib/sigtrap.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/sigtrap.pm 755 0 0
+file /spec/lib/Unicode/Collate/allkeys.txt ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/allkeys.txt 755 0 0
+file /spec/lib/Unicode/Collate/Locale.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale.pm 755 0 0
+file /spec/lib/Unicode/Collate/Locale/es_trad.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/es_trad.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/haw.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/haw.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/fa.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/fa.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/fi.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/fi.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/zh_pin.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/zh_pin.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/eo.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/eo.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/to.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/to.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/kok.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/kok.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/om.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/om.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/ha.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/ha.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/wo.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/wo.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/ml.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/ml.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/ee.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/ee.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/cy.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/cy.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/fr.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/fr.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/hy.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/hy.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/ta.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/ta.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/se.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/se.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/zh.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/zh.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/ca.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/ca.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/zh_strk.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/zh_strk.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/or.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/or.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/ru.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/ru.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/ar.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/ar.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/fi_phone.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/fi_phone.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/mr.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/mr.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/ja.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/ja.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/hr.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/hr.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/sr.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/sr.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/lt.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/lt.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/ur.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/ur.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/bn.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/bn.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/zh_big5.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/zh_big5.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/kl.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/kl.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/af.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/af.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/et.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/et.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/tr.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/tr.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/th.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/th.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/kk.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/kk.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/pa.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/pa.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/gu.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/gu.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/tn.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/tn.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/zh_zhu.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/zh_zhu.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/ln.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/ln.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/hu.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/hu.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/be.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/be.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/fo.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/fo.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/pl.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/pl.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/si_dict.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/si_dict.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/sl.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/sl.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/sv_refo.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/sv_refo.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/lv.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/lv.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/da.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/da.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/sk.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/sk.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/te.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/te.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/kn.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/kn.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/hi.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/hi.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/zh_gb.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/zh_gb.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/ig.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/ig.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/si.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/si.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/cs.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/cs.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/yo.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/yo.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/nb.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/nb.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/vi.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/vi.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/uk.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/uk.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/is.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/is.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/sa.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/sa.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/fil.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/fil.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/as.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/as.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/de_phone.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/de_phone.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/az.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/az.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/sv.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/sv.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/mk.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/mk.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/mt.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/mt.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/ko.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/ko.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/ro.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/ro.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/es.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/es.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/wae.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/wae.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/bg.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/bg.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/sq.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/sq.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/nso.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/nso.pl 755 0 0
+file /spec/lib/Unicode/Collate/Locale/nn.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/Locale/nn.pl 755 0 0
+file /spec/lib/Unicode/Collate/CJK/Korean.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/CJK/Korean.pm 755 0 0
+file /spec/lib/Unicode/Collate/CJK/Stroke.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/CJK/Stroke.pm 755 0 0
+file /spec/lib/Unicode/Collate/CJK/Zhuyin.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/CJK/Zhuyin.pm 755 0 0
+file /spec/lib/Unicode/Collate/CJK/JISX0208.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/CJK/JISX0208.pm 755 0 0
+file /spec/lib/Unicode/Collate/CJK/Big5.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/CJK/Big5.pm 755 0 0
+file /spec/lib/Unicode/Collate/CJK/Pinyin.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/CJK/Pinyin.pm 755 0 0
+file /spec/lib/Unicode/Collate/CJK/GB2312.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/CJK/GB2312.pm 755 0 0
+file /spec/lib/Unicode/Collate/keys.txt ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate/keys.txt 755 0 0
+file /spec/lib/Unicode/UCD.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/UCD.pm 755 0 0
+file /spec/lib/Unicode/Collate.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Collate.pm 755 0 0
+file /spec/lib/Unicode/Normalize.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Unicode/Normalize.pm 755 0 0
+file /spec/lib/mhmsgextbody.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhmsgextbody.pl 755 0 0
+file /spec/lib/overloading.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/overloading.pm 755 0 0
+file /spec/lib/PerlIO.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/PerlIO.pm 755 0 0
+file /spec/lib/spam.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/spam.pl 755 0 0
+file /spec/lib/strict.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/strict.pm 755 0 0
+file /spec/lib/Carp/Heavy.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Carp/Heavy.pm 755 0 0
+file /spec/lib/mhtxtenrich.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhtxtenrich.pl 755 0 0
+file /spec/lib/charnames.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/charnames.pm 755 0 0
+file /spec/lib/mailcomp.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/mailcomp.pm 755 0 0
+file /spec/lib/mhrcvars.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhrcvars.pl 755 0 0
+file /spec/lib/Hash/Util.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Hash/Util.pm 755 0 0
+file /spec/lib/Hash/Util/FieldHash.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Hash/Util/FieldHash.pm 755 0 0
+file /spec/lib/bignum.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/bignum.pm 755 0 0
+file /spec/lib/fields.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/fields.pm 755 0 0
+file /spec/lib/iso2022jp.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/iso2022jp.pl 755 0 0
+file /spec/lib/Data/Dumper.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Data/Dumper.pm 755 0 0
+file /spec/lib/vars.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/vars.pm 755 0 0
+file /spec/lib/IO/Handle.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/IO/Handle.pm 755 0 0
+file /spec/lib/IO/WrapTie.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/IO/WrapTie.pm 755 0 0
+file /spec/lib/IO/Scalar.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/IO/Scalar.pm 755 0 0
+file /spec/lib/IO/Socket/INET.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/IO/Socket/INET.pm 755 0 0
+file /spec/lib/IO/Socket/UNIX.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/IO/Socket/UNIX.pm 755 0 0
+file /spec/lib/IO/Seekable.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/IO/Seekable.pm 755 0 0
+file /spec/lib/IO/File.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/IO/File.pm 755 0 0
+file /spec/lib/Storable.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/Storable.pm 755 0 0
+file /spec/lib/parent.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/parent.pm 755 0 0
+file /spec/lib/dumpvar.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/dumpvar.pl 755 0 0
+file /spec/lib/feature.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/feature.pm 755 0 0
+file /spec/lib/osinit.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/osinit.pl 755 0 0
+file /spec/lib/integer.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/integer.pm 755 0 0
+file /spec/lib/mhrcfile.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhrcfile.pl 755 0 0
+file /spec/lib/mhthread.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhthread.pl 755 0 0
+file /spec/lib/attributes.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/attributes.pm 755 0 0
+file /spec/lib/blib.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/blib.pm 755 0 0
+file /spec/lib/auto/Storable/autosplit.ix ${SPEC2017_INPUT_DIR}/perlbench/lib/auto/Storable/autosplit.ix 755 0 0
+file /spec/lib/mhscan.pl ${SPEC2017_INPUT_DIR}/perlbench/lib/mhscan.pl 755 0 0
+file /spec/lib/open.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/open.pm 755 0 0
+file /spec/lib/IO.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/IO.pm 755 0 0
+file /spec/lib/filetest.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/filetest.pm 755 0 0
+file /spec/lib/MHonArc/CharMaps.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharMaps.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/AppleThai.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/AppleThai.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/MhaEncode.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/MhaEncode.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/ISO8859_4.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/ISO8859_4.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/KOI8_F.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/KOI8_F.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/BIG5_HKSCS.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/BIG5_HKSCS.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/AppleCroatian.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/AppleCroatian.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/CP1258.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/CP1258.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/AppleGreek.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/AppleGreek.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/VISCII.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/VISCII.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/CP866.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/CP866.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/CP1256.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/CP1256.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/HP_ROMAN8.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/HP_ROMAN8.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/ISO8859_14.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/ISO8859_14.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/KOI8_U.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/KOI8_U.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/AppleTurkish.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/AppleTurkish.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/AppleRoman.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/AppleRoman.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/CP1251.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/CP1251.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/ISO8859_16.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/ISO8859_16.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/CP1257.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/CP1257.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/BIG5_ETEN.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/BIG5_ETEN.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/CP1250.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/CP1250.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/KOI_7.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/KOI_7.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/ISO8859_9.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/ISO8859_9.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/KOI8_B.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/KOI8_B.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/ISO8859_1.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/ISO8859_1.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/AppleCenteuro.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/AppleCenteuro.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/CP1253.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/CP1253.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/ISO8859_5.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/ISO8859_5.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/ISO8859_6.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/ISO8859_6.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/CP936.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/CP936.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/MapUTF8.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/MapUTF8.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/KOI8_A.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/KOI8_A.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/AppleArabic.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/AppleArabic.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/ISO8859_3.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/ISO8859_3.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/CP1252.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/CP1252.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/CP1255.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/CP1255.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/GOST19768_87.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/GOST19768_87.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/Encode.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/Encode.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/CP1254.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/CP1254.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/ISO8859_7.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/ISO8859_7.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/KOI8_R.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/KOI8_R.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/KOI_0.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/KOI_0.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/AppleIceland.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/AppleIceland.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/ISO8859_2.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/ISO8859_2.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/KOI8_E.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/KOI8_E.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/CP932.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/CP932.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/ISO8859_8.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/ISO8859_8.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/CP950.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/CP950.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/CP949.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/CP949.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/AppleRomanian.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/AppleRomanian.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/EUC_JP.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/EUC_JP.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/AppleCyrillic.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/AppleCyrillic.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/AppleHebrew.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/AppleHebrew.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/ISO8859_13.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/ISO8859_13.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/ISO8859_15.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/ISO8859_15.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/ISO8859_11.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/ISO8859_11.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/ISO8859_10.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/ISO8859_10.pm 755 0 0
+file /spec/lib/MHonArc/UTF8/GB2312.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8/GB2312.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/AppleThai.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/AppleThai.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/ISO8859_4.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/ISO8859_4.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/KOI8_F.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/KOI8_F.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/BIG5_HKSCS.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/BIG5_HKSCS.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/AppleCroatian.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/AppleCroatian.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/CP1258.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/CP1258.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/AppleGreek.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/AppleGreek.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/VISCII.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/VISCII.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/CP866.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/CP866.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/CP1256.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/CP1256.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/HP_ROMAN8.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/HP_ROMAN8.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/ISO8859_14.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/ISO8859_14.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/KOI8_U.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/KOI8_U.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/AppleTurkish.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/AppleTurkish.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/AppleRoman.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/AppleRoman.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/CP1251.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/CP1251.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/ISO8859_16.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/ISO8859_16.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/CP1257.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/CP1257.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/BIG5_ETEN.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/BIG5_ETEN.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/CP1250.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/CP1250.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/KOI_7.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/KOI_7.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/ISO8859_9.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/ISO8859_9.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/KOI8_B.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/KOI8_B.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/ISO8859_1.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/ISO8859_1.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/AppleCenteuro.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/AppleCenteuro.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/CP1253.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/CP1253.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/ISO8859_5.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/ISO8859_5.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/ISO8859_6.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/ISO8859_6.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/CP936.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/CP936.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/KOI8_A.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/KOI8_A.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/AppleArabic.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/AppleArabic.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/ISO8859_3.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/ISO8859_3.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/CP1252.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/CP1252.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/CP1255.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/CP1255.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/GOST19768_87.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/GOST19768_87.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/CP1254.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/CP1254.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/ISO8859_7.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/ISO8859_7.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/KOI8_R.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/KOI8_R.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/KOI_0.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/KOI_0.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/AppleIceland.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/AppleIceland.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/ISO8859_2.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/ISO8859_2.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/KOI8_E.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/KOI8_E.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/CP932.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/CP932.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/ISO8859_8.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/ISO8859_8.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/CP950.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/CP950.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/CP949.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/CP949.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/AppleRomanian.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/AppleRomanian.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/EUC_JP.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/EUC_JP.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/AppleCyrillic.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/AppleCyrillic.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/AppleHebrew.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/AppleHebrew.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/ISO8859_13.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/ISO8859_13.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/ISO8859_15.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/ISO8859_15.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/ISO8859_11.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/ISO8859_11.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/ISO8859_10.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/ISO8859_10.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt/GB2312.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt/GB2312.pm 755 0 0
+file /spec/lib/MHonArc/RFC822.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/RFC822.pm 755 0 0
+file /spec/lib/MHonArc/Char.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/Char.pm 755 0 0
+file /spec/lib/MHonArc/Encode.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/Encode.pm 755 0 0
+file /spec/lib/MHonArc/UTF8.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/UTF8.pm 755 0 0
+file /spec/lib/MHonArc/Char/KR.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/Char/KR.pm 755 0 0
+file /spec/lib/MHonArc/Char/JP.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/Char/JP.pm 755 0 0
+file /spec/lib/MHonArc/CharEnt.pm ${SPEC2017_INPUT_DIR}/perlbench/lib/MHonArc/CharEnt.pm 755 0 0
+dir /spec/rules 755 0 0
+file /spec/rules/20_body_tests.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/20_body_tests.cf 755 0 0
+file /spec/rules/20_porn.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/20_porn.cf 755 0 0
+file /spec/rules/20_anti_ratware.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/20_anti_ratware.cf 755 0 0
+file /spec/rules/languages ${SPEC2017_INPUT_DIR}/perlbench/rules/languages 755 0 0
+file /spec/rules/STATISTICS-set1.txt ${SPEC2017_INPUT_DIR}/perlbench/rules/STATISTICS-set1.txt 755 0 0
+file /spec/rules/20_head_tests.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/20_head_tests.cf 755 0 0
+file /spec/rules/20_uri_tests.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/20_uri_tests.cf 755 0 0
+file /spec/rules/20_fake_helo_tests.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/20_fake_helo_tests.cf 755 0 0
+file /spec/rules/regression_tests.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/regression_tests.cf 755 0 0
+file /spec/rules/10_misc.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/10_misc.cf 755 0 0
+file /spec/rules/STATISTICS.txt ${SPEC2017_INPUT_DIR}/perlbench/rules/STATISTICS.txt 755 0 0
+file /spec/rules/20_phrases.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/20_phrases.cf 755 0 0
+file /spec/rules/20_meta_tests.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/20_meta_tests.cf 755 0 0
+file /spec/rules/25_body_tests_es.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/25_body_tests_es.cf 755 0 0
+file /spec/rules/STATISTICS-set3.txt ${SPEC2017_INPUT_DIR}/perlbench/rules/STATISTICS-set3.txt 755 0 0
+file /spec/rules/25_body_tests_pl.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/25_body_tests_pl.cf 755 0 0
+file /spec/rules/30_text_fr.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/30_text_fr.cf 755 0 0
+file /spec/rules/30_text_de.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/30_text_de.cf 755 0 0
+file /spec/rules/user_prefs.template ${SPEC2017_INPUT_DIR}/perlbench/rules/user_prefs.template 755 0 0
+file /spec/rules/25_head_tests_pl.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/25_head_tests_pl.cf 755 0 0
+file /spec/rules/30_text_it.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/30_text_it.cf 755 0 0
+file /spec/rules/25_head_tests_es.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/25_head_tests_es.cf 755 0 0
+file /spec/rules/60_whitelist.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/60_whitelist.cf 755 0 0
+file /spec/rules/STATISTICS-set2.txt ${SPEC2017_INPUT_DIR}/perlbench/rules/STATISTICS-set2.txt 755 0 0
+file /spec/rules/23_bayes.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/23_bayes.cf 755 0 0
+file /spec/rules/20_html_tests.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/20_html_tests.cf 755 0 0
+file /spec/rules/20_ratware.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/20_ratware.cf 755 0 0
+file /spec/rules/30_text_pl.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/30_text_pl.cf 755 0 0
+file /spec/rules/50_scores.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/50_scores.cf 755 0 0
+file /spec/rules/30_text_sk.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/30_text_sk.cf 755 0 0
+file /spec/rules/local.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/local.cf 755 0 0
+file /spec/rules/triplets.txt ${SPEC2017_INPUT_DIR}/perlbench/rules/triplets.txt 755 0 0
+file /spec/rules/30_text_es.cf ${SPEC2017_INPUT_DIR}/perlbench/rules/30_text_es.cf 755 0 0

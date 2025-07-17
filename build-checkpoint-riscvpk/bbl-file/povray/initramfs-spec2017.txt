@@ -1,0 +1,83 @@
+dir /bin 755 0 0
+dir /etc 755 0 0
+dir /dev 755 0 0
+dir /lib 755 0 0
+dir /proc 755 0 0
+dir /sbin 755 0 0
+dir /sys 755 0 0
+dir /tmp 755 0 0
+dir /usr 755 0 0
+dir /mnt 755 0 0
+dir /usr/bin 755 0 0
+dir /usr/lib 755 0 0
+dir /usr/sbin 755 0 0
+dir /var 755 0 0
+dir /var/tmp 755 0 0
+dir /root 755 0 0
+dir /var/log 755 0 0
+
+nod /dev/console 644 0 0 c 5 1
+nod /dev/null 644 0 0 c 1 3
+# libraries
+file /lib/ld-linux-riscv64-lp64d.so.1 ${RISCV}/sysroot/lib/ld-linux-riscv64-lp64d.so.1 755 0 0
+file /lib/libc.so.6 ${RISCV}/sysroot/lib/libc.so.6 755 0 0
+file /lib/libresolv.so.2 ${RISCV}/sysroot/lib/libresolv.so.2 755 0 0
+file /lib/libm.so.6 ${RISCV}/sysroot/lib/libm.so.6 755 0 0
+file /lib/libdl.so.2 ${RISCV}/sysroot/lib/libdl.so.2 755 0 0
+file /lib/libpthread.so.0 ${RISCV}/sysroot/lib/libpthread.so.0 755 0 0
+file /lib/libgfortran.so.5 ${RISCV}/sysroot/lib/libgfortran.so.5 755 0 0
+file /lib/libgcc_s.so.1 ${RISCV}/sysroot/lib/libgcc_s.so.1 755 0 0
+file /lib/libstdc++.so.6 ${RISCV}/sysroot/lib/libstdc++.so.6 755 0 0
+# busybox
+file /bin/busybox ${RISCV_ROOTFS_HOME}/rootfsimg/build/busybox 755 0 0
+file /etc/inittab ${RISCV_ROOTFS_HOME}/rootfsimg/inittab-spec 755 0 0
+slink /init /bin/busybox 755 0 0
+# SPEC common
+dir /spec_common 755 0 0
+file /spec_common/before_workload ${RISCV_ROOTFS_HOME}/rootfsimg/build/before_workload 755 0 0
+file /spec_common/trap ${RISCV_ROOTFS_HOME}/rootfsimg/build/trap 755 0 0
+# SPEC 
+dir /spec 755 0 0
+file /spec/run.sh ${RISCV_ROOTFS_HOME}/rootfsimg/run.sh 755 0 0
+file /spec/povray ${SPEC2017_EXE_DIR}/povray 755 0 0
+file /spec/SPEC-benchmark-ref.ini  ${SPEC2017_INPUT_DIR}/povray/SPEC-benchmark-ref.ini 755 0 0
+file /spec/chars.inc               ${SPEC2017_INPUT_DIR}/povray/chars.inc              755 0 0
+file /spec/golds.inc               ${SPEC2017_INPUT_DIR}/povray/golds.inc              755 0 0
+file /spec/stones.inc              ${SPEC2017_INPUT_DIR}/povray/stones.inc             755 0 0
+file /spec/logo.inc                ${SPEC2017_INPUT_DIR}/povray/logo.inc               755 0 0
+file /spec/consts.inc              ${SPEC2017_INPUT_DIR}/povray/consts.inc             755 0 0
+file /spec/arrays.inc              ${SPEC2017_INPUT_DIR}/povray/arrays.inc             755 0 0
+file /spec/shapesq.inc             ${SPEC2017_INPUT_DIR}/povray/shapesq.inc            755 0 0
+file /spec/stage1.inc              ${SPEC2017_INPUT_DIR}/povray/stage1.inc             755 0 0
+file /spec/woodmaps.inc            ${SPEC2017_INPUT_DIR}/povray/woodmaps.inc           755 0 0
+file /spec/stdcam.inc              ${SPEC2017_INPUT_DIR}/povray/stdcam.inc             755 0 0
+file /spec/screen.inc              ${SPEC2017_INPUT_DIR}/povray/screen.inc             755 0 0
+file /spec/glass.inc               ${SPEC2017_INPUT_DIR}/povray/glass.inc              755 0 0
+file /spec/cyrvetic.ttf            ${SPEC2017_INPUT_DIR}/povray/cyrvetic.ttf           755 0 0
+file /spec/stones1.inc             ${SPEC2017_INPUT_DIR}/povray/stones1.inc            755 0 0
+file /spec/woods.inc               ${SPEC2017_INPUT_DIR}/povray/woods.inc              755 0 0
+file /spec/stoneold.inc            ${SPEC2017_INPUT_DIR}/povray/stoneold.inc           755 0 0
+file /spec/stones2.inc             ${SPEC2017_INPUT_DIR}/povray/stones2.inc            755 0 0
+file /spec/povlogo.ttf             ${SPEC2017_INPUT_DIR}/povray/povlogo.ttf            755 0 0
+file /spec/stdinc.inc              ${SPEC2017_INPUT_DIR}/povray/stdinc.inc             755 0 0
+file /spec/skies.inc               ${SPEC2017_INPUT_DIR}/povray/skies.inc              755 0 0
+file /spec/shapes_old.inc          ${SPEC2017_INPUT_DIR}/povray/shapes_old.inc         755 0 0
+file /spec/crystal.ttf             ${SPEC2017_INPUT_DIR}/povray/crystal.ttf            755 0 0
+file /spec/rand.inc                ${SPEC2017_INPUT_DIR}/povray/rand.inc               755 0 0
+file /spec/textures.inc            ${SPEC2017_INPUT_DIR}/povray/textures.inc           755 0 0
+file /spec/sunpos.inc              ${SPEC2017_INPUT_DIR}/povray/sunpos.inc             755 0 0
+file /spec/stars.inc               ${SPEC2017_INPUT_DIR}/povray/stars.inc              755 0 0
+file /spec/rad_def.inc             ${SPEC2017_INPUT_DIR}/povray/rad_def.inc            755 0 0
+file /spec/colors.inc              ${SPEC2017_INPUT_DIR}/povray/colors.inc             755 0 0
+file /spec/shapes.inc              ${SPEC2017_INPUT_DIR}/povray/shapes.inc             755 0 0
+file /spec/finish.inc              ${SPEC2017_INPUT_DIR}/povray/finish.inc             755 0 0
+file /spec/strings.inc             ${SPEC2017_INPUT_DIR}/povray/strings.inc            755 0 0
+file /spec/timrom.ttf              ${SPEC2017_INPUT_DIR}/povray/timrom.ttf             755 0 0
+file /spec/metals.inc              ${SPEC2017_INPUT_DIR}/povray/metals.inc             755 0 0
+file /spec/shapes2.inc             ${SPEC2017_INPUT_DIR}/povray/shapes2.inc            755 0 0
+file /spec/debug.inc               ${SPEC2017_INPUT_DIR}/povray/debug.inc              755 0 0
+file /spec/transforms.inc          ${SPEC2017_INPUT_DIR}/povray/transforms.inc         755 0 0
+file /spec/math.inc                ${SPEC2017_INPUT_DIR}/povray/math.inc               755 0 0
+file /spec/functions.inc           ${SPEC2017_INPUT_DIR}/povray/functions.inc          755 0 0
+file /spec/glass_old.inc           ${SPEC2017_INPUT_DIR}/povray/glass_old.inc          755 0 0
+file /spec/SPEC-benchmark-ref.pov  ${SPEC2017_INPUT_DIR}/povray/SPEC-benchmark-ref.pov 755 0 0

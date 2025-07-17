@@ -1,0 +1,71 @@
+dir /bin 755 0 0
+dir /etc 755 0 0
+dir /dev 755 0 0
+dir /lib 755 0 0
+dir /proc 755 0 0
+dir /sbin 755 0 0
+dir /sys 755 0 0
+dir /tmp 755 0 0
+dir /usr 755 0 0
+dir /mnt 755 0 0
+dir /usr/bin 755 0 0
+dir /usr/lib 755 0 0
+dir /usr/sbin 755 0 0
+dir /var 755 0 0
+dir /var/tmp 755 0 0
+dir /root 755 0 0
+dir /var/log 755 0 0
+
+nod /dev/console 644 0 0 c 5 1
+nod /dev/null 644 0 0 c 1 3
+# libraries
+file /lib/ld-linux-riscv64-lp64d.so.1 ${RISCV}/sysroot/lib/ld-linux-riscv64-lp64d.so.1 755 0 0
+file /lib/libc.so.6 ${RISCV}/sysroot/lib/libc.so.6 755 0 0
+file /lib/libresolv.so.2 ${RISCV}/sysroot/lib/libresolv.so.2 755 0 0
+file /lib/libm.so.6 ${RISCV}/sysroot/lib/libm.so.6 755 0 0
+file /lib/libdl.so.2 ${RISCV}/sysroot/lib/libdl.so.2 755 0 0
+file /lib/libpthread.so.0 ${RISCV}/sysroot/lib/libpthread.so.0 755 0 0
+file /lib/libgfortran.so.5 ${RISCV}/sysroot/lib/libgfortran.so.5 755 0 0
+file /lib/libgcc_s.so.1 ${RISCV}/sysroot/lib/libgcc_s.so.1 755 0 0
+file /lib/libstdc++.so.6 ${RISCV}/sysroot/lib/libstdc++.so.6 755 0 0
+# busybox
+file /bin/busybox ${RISCV_ROOTFS_HOME}/rootfsimg/build/busybox 755 0 0
+file /etc/inittab ${RISCV_ROOTFS_HOME}/rootfsimg/inittab-spec 755 0 0
+slink /init /bin/busybox 755 0 0
+# SPEC common
+dir /spec_common 755 0 0
+file /spec_common/before_workload ${RISCV_ROOTFS_HOME}/rootfsimg/build/before_workload 755 0 0
+file /spec_common/trap ${RISCV_ROOTFS_HOME}/rootfsimg/build/trap 755 0 0
+# SPEC wrf
+dir /spec 755 0 0
+file /spec/run.sh               ${RISCV_ROOTFS_HOME}/rootfsimg/run.sh 755 0 0
+file /spec/wrf                  ${SPEC2017_EXE_DIR}/wrf 755 0 0
+file /spec/CAM_ABS_DATA          ${SPEC2017_INPUT_DIR}/wrf/CAM_ABS_DATA         755 0 0
+file /spec/CAM_AEROPT_DATA       ${SPEC2017_INPUT_DIR}/wrf/CAM_AEROPT_DATA      755 0 0
+file /spec/co2_trans             ${SPEC2017_INPUT_DIR}/wrf/co2_trans            755 0 0
+file /spec/control               ${SPEC2017_INPUT_DIR}/wrf/control              755 0 0
+file /spec/ETAMPNEW_DATA         ${SPEC2017_INPUT_DIR}/wrf/ETAMPNEW_DATA        755 0 0
+file /spec/GENPARM.TBL           ${SPEC2017_INPUT_DIR}/wrf/GENPARM.TBL          755 0 0
+file /spec/grib2map.tbl          ${SPEC2017_INPUT_DIR}/wrf/grib2map.tbl         755 0 0
+file /spec/gribmap.txt           ${SPEC2017_INPUT_DIR}/wrf/gribmap.txt          755 0 0
+file /spec/LANDUSE.TBL           ${SPEC2017_INPUT_DIR}/wrf/LANDUSE.TBL          755 0 0
+file /spec/namelist.input        ${SPEC2017_INPUT_DIR}/wrf/namelist.input       755 0 0
+# file /spec/namelist.output       ${SPEC2017_INPUT_DIR}/wrf/namelist.output      755 0 0
+file /spec/OBS_DOMAIN101         ${SPEC2017_INPUT_DIR}/wrf/OBS_DOMAIN101        755 0 0
+file /spec/OBS_DOMAIN201         ${SPEC2017_INPUT_DIR}/wrf/OBS_DOMAIN201        755 0 0
+file /spec/ozone.formatted       ${SPEC2017_INPUT_DIR}/wrf/ozone.formatted      755 0 0
+file /spec/ozone_lat.formatted   ${SPEC2017_INPUT_DIR}/wrf/ozone_lat.formatted  755 0 0
+file /spec/ozone_plev.formatted  ${SPEC2017_INPUT_DIR}/wrf/ozone_plev.formatted 755 0 0
+file /spec/RRTM_DATA             ${SPEC2017_INPUT_DIR}/wrf/RRTM_DATA            755 0 0
+file /spec/RRTMG_LW_DATA         ${SPEC2017_INPUT_DIR}/wrf/RRTMG_LW_DATA        755 0 0
+file /spec/RRTMG_SW_DATA         ${SPEC2017_INPUT_DIR}/wrf/RRTMG_SW_DATA        755 0 0
+file /spec/SOILPARM.TBL          ${SPEC2017_INPUT_DIR}/wrf/SOILPARM.TBL         755 0 0
+file /spec/tr49t67               ${SPEC2017_INPUT_DIR}/wrf/tr49t67              755 0 0
+file /spec/tr49t85               ${SPEC2017_INPUT_DIR}/wrf/tr49t85              755 0 0
+file /spec/tr67t85               ${SPEC2017_INPUT_DIR}/wrf/tr67t85              755 0 0
+file /spec/URBPARM.TBL           ${SPEC2017_INPUT_DIR}/wrf/URBPARM.TBL          755 0 0
+file /spec/VEGPARM.TBL           ${SPEC2017_INPUT_DIR}/wrf/VEGPARM.TBL          755 0 0
+file /spec/VEGPARM.TBLa          ${SPEC2017_INPUT_DIR}/wrf/VEGPARM.TBLa         755 0 0
+file /spec/wrfbdy_d01            ${SPEC2017_INPUT_DIR}/wrf/wrfbdy_d01           755 0 0
+file /spec/wrfinput_d01          ${SPEC2017_INPUT_DIR}/wrf/wrfinput_d01         755 0 0
+file /spec/wrfsfdda_d01          ${SPEC2017_INPUT_DIR}/wrf/wrfsfdda_d01         755 0 0

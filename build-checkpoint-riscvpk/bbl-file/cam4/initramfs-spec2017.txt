@@ -1,0 +1,62 @@
+dir /bin 755 0 0
+dir /etc 755 0 0
+dir /dev 755 0 0
+dir /lib 755 0 0
+dir /proc 755 0 0
+dir /sbin 755 0 0
+dir /sys 755 0 0
+dir /tmp 755 0 0
+dir /usr 755 0 0
+dir /mnt 755 0 0
+dir /usr/bin 755 0 0
+dir /usr/lib 755 0 0
+dir /usr/sbin 755 0 0
+dir /var 755 0 0
+dir /var/tmp 755 0 0
+dir /root 755 0 0
+dir /var/log 755 0 0
+
+nod /dev/console 644 0 0 c 5 1
+nod /dev/null 644 0 0 c 1 3
+# libraries
+file /lib/ld-linux-riscv64-lp64d.so.1 ${RISCV}/sysroot/lib/ld-linux-riscv64-lp64d.so.1 755 0 0
+file /lib/libc.so.6 ${RISCV}/sysroot/lib/libc.so.6 755 0 0
+file /lib/libresolv.so.2 ${RISCV}/sysroot/lib/libresolv.so.2 755 0 0
+file /lib/libm.so.6 ${RISCV}/sysroot/lib/libm.so.6 755 0 0
+file /lib/libdl.so.2 ${RISCV}/sysroot/lib/libdl.so.2 755 0 0
+file /lib/libpthread.so.0 ${RISCV}/sysroot/lib/libpthread.so.0 755 0 0
+file /lib/libgfortran.so.5 ${RISCV}/sysroot/lib/libgfortran.so.5 755 0 0
+file /lib/libgcc_s.so.1 ${RISCV}/sysroot/lib/libgcc_s.so.1 755 0 0
+file /lib/libstdc++.so.6 ${RISCV}/sysroot/lib/libstdc++.so.6 755 0 0
+# busybox
+file /bin/busybox ${RISCV_ROOTFS_HOME}/rootfsimg/build/busybox 755 0 0
+file /etc/inittab ${RISCV_ROOTFS_HOME}/rootfsimg/inittab-spec 755 0 0
+slink /init /bin/busybox 755 0 0
+# SPEC common
+dir /spec_common 755 0 0
+file /spec_common/before_workload ${RISCV_ROOTFS_HOME}/rootfsimg/build/before_workload 755 0 0
+file /spec_common/trap ${RISCV_ROOTFS_HOME}/rootfsimg/build/trap 755 0 0
+# SPEC cam4_r
+dir /spec 755 0 0
+file /spec/run.sh ${RISCV_ROOTFS_HOME}/rootfsimg/run.sh 755 0 0
+file /spec/cam4 ${SPEC2017_EXE_DIR}/cam4 755 0 0
+file /spec/bcphi_camrt_c080918.nc                     ${SPEC2017_INPUT_DIR}/cam4/bcphi_camrt_c080918.nc                     755 0 0
+file /spec/sulfate_camrt_c080918.nc                   ${SPEC2017_INPUT_DIR}/cam4/sulfate_camrt_c080918.nc                   755 0 0
+file /spec/dust4_camrt_c080918.nc                     ${SPEC2017_INPUT_DIR}/cam4/dust4_camrt_c080918.nc                     755 0 0
+file /spec/ssam_camrt_c080918.nc                      ${SPEC2017_INPUT_DIR}/cam4/ssam_camrt_c080918.nc                      755 0 0
+file /spec/ocpho_camrt_c080918.nc                     ${SPEC2017_INPUT_DIR}/cam4/ocpho_camrt_c080918.nc                     755 0 0
+file /spec/aero_1.9x2.5_L26_2000clim_c091112.nc       ${SPEC2017_INPUT_DIR}/cam4/aero_1.9x2.5_L26_2000clim_c091112.nc       755 0 0
+file /spec/bcpho_camrt_c080918.nc                     ${SPEC2017_INPUT_DIR}/cam4/bcpho_camrt_c080918.nc                     755 0 0
+file /spec/cami_0000-01-01_1.9x2.5_L26_APE_c080203.nc ${SPEC2017_INPUT_DIR}/cam4/cami_0000-01-01_1.9x2.5_L26_APE_c080203.nc 755 0 0
+file /spec/dust1_camrt_c080918.nc                     ${SPEC2017_INPUT_DIR}/cam4/dust1_camrt_c080918.nc                     755 0 0
+file /spec/ozone_1.9x2.5_L26_2000clim_c091112.nc      ${SPEC2017_INPUT_DIR}/cam4/ozone_1.9x2.5_L26_2000clim_c091112.nc      755 0 0
+file /spec/drv_flds_in                                ${SPEC2017_INPUT_DIR}/cam4/drv_flds_in                                755 0 0
+file /spec/sscm_camrt_c080918.nc                      ${SPEC2017_INPUT_DIR}/cam4/sscm_camrt_c080918.nc                      755 0 0
+file /spec/atm_in                                     ${SPEC2017_INPUT_DIR}/cam4/atm_in                                     755 0 0
+file /spec/clim_p_trop.nc                             ${SPEC2017_INPUT_DIR}/cam4/clim_p_trop.nc                             755 0 0
+file /spec/drv_in                                     ${SPEC2017_INPUT_DIR}/cam4/drv_in                                     755 0 0
+file /spec/abs_ems_factors_fastvx.c030508.nc          ${SPEC2017_INPUT_DIR}/cam4/abs_ems_factors_fastvx.c030508.nc          755 0 0
+file /spec/dust2_camrt_c080918.nc                     ${SPEC2017_INPUT_DIR}/cam4/dust2_camrt_c080918.nc                     755 0 0
+file /spec/dust3_camrt_c080918.nc                     ${SPEC2017_INPUT_DIR}/cam4/dust3_camrt_c080918.nc                     755 0 0
+file /spec/USGS-gtopo30_1.9x2.5_remap_c050602.nc      ${SPEC2017_INPUT_DIR}/cam4/USGS-gtopo30_1.9x2.5_remap_c050602.nc      755 0 0
+file /spec/ocphi_camrt_c080918.nc                     ${SPEC2017_INPUT_DIR}/cam4/ocphi_camrt_c080918.nc                     755 0 0
