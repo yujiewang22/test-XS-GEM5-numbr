@@ -22,20 +22,12 @@ export PATH=$RISCV/bin:$PATH
 export WORKLOAD_DIR=${WORKDIR}/bbl-file
 
 # SPEC2017
-export SPEC2017_EXE_DIR=${WORKDIR}/../spec2017-dir/wrapper/CPU2017LiteWrapper/cpu2017_build.RXU6
+export SPEC2017_EXE_DIR=${WORKDIR}/../spec2017-dir/wrapper/CPU2017LiteWrapper/cpu2017_build.RXU7
 export SPEC2017_INPUT_DIR=${WORKDIR}/../spec2017-dir/cpu2017-compiled/cpu2017/spec2017_run_dir
 
 # -----------------------------------------------------------
 # 2、构建过程 
 # -----------------------------------------------------------
-
-# 删除构建
-rm -rf ${RISCV_ROOTFS_HOME}/apps/before_workload/build/*
-rm -rf ${RISCV_ROOTFS_HOME}/apps/trap/build/*
-rm -rf ${RISCV_ROOTFS_HOME}/apps/busybox/build/*
-cd ${RISCV_ROOTFS_HOME}/apps/busybox/repo
-make mrproper
-cp ${RISCV_ROOTFS_HOME}/apps/busybox/config ${RISCV_ROOTFS_HOME}/apps/busybox/repo/.config
 
 # 配置linux内核，修改initramfs
 cd ${WORKDIR}/riscv-linux
