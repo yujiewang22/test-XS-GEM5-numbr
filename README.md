@@ -3,18 +3,18 @@
 ## 一、目录结构
 
 ```
-test-XS-GEM5-numbr/
+test-XS-GEM5-numbr
 │
 ├── software
 │   ├── riscv64gc/         # 需自行放置
 │   └── riscv-gem5/        # 需自行放置
 ├──spec2017-dir
 │   ├── cpu2017/           # 需自行放置
-│   ├── cpu2017-compiled/
+│   ├── cpu2017-compiled
 │   │   ├── rv64g.cfg
 │   │   ├── compile_cpu2017.sh
 │   │   └── get_spec2017_input.py
-│   └── wrapper/
+│   └── wrapper
 │       ├── compile_wrapper.sh
 │       └── recompile_wrf.sh
 ├── build-checkpoint-riscvpk
@@ -28,12 +28,12 @@ test-XS-GEM5-numbr/
 │   └── build_all_checkpoint.sh
 ├── run-gem5
 │   ├── GEM5/
-│   ├── result-folder/
+│   ├── result-folder
 │   │   └── reorg.sh
 │   ├── gcpt.bin
 │   ├── compile_gem5.sh
 │   ├── run_all_checkpoint.sh
-│   └── analyze-data/
+│   └── analyze-data
 │       ├── gem5_data_proc/
 │       ├── spec2017_workload_list.txt
 │       ├── gen_checkpoint_json.sh
