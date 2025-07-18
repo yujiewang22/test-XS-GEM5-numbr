@@ -17,6 +17,9 @@ export SPEC_LITE=${WORKDIR}/CPU2017LiteWrapper
 # RISC-V工具链
 export PATH=${WORKDIR}/../../software/riscv64gc/bin:$PATH
 
+# 生成目录名
+export COLLECT_DIR_NAME=RXU7
+
 # -----------------------------------------------------------
 # 2、构建过程 
 # -----------------------------------------------------------
@@ -34,5 +37,5 @@ make build_allr -j${PARALLEL_NUM}
 
 # 收集结果
 cd ${SPEC_LITE}
-bash scripts/collect.sh RXU7
+bash scripts/collect.sh ${COLLECT_DIR_NAME}
 

@@ -22,7 +22,8 @@ export PATH=$RISCV/bin:$PATH
 export WORKLOAD_DIR=${WORKDIR}/bbl-file
 
 # SPEC2017
-export SPEC2017_EXE_DIR=${WORKDIR}/../spec2017-dir/wrapper/CPU2017LiteWrapper/cpu2017_build.RXU7
+export COLLECT_DIR_NAME=RXU7
+export SPEC2017_EXE_DIR=${WORKDIR}/../spec2017-dir/wrapper/CPU2017LiteWrapper/cpu2017_build.${COLLECT_DIR_NAME}
 export SPEC2017_INPUT_DIR=${WORKDIR}/../spec2017-dir/cpu2017-compiled/cpu2017/spec2017_run_dir
 
 # -----------------------------------------------------------

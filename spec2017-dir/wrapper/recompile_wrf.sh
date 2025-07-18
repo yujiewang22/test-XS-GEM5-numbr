@@ -18,6 +18,9 @@ export SPEC_LITE=${WORKDIR}/CPU2017LiteWrapper
 export PATH=${WORKDIR}/../../software/riscv64gc/bin:$PATH
 export RISCV_GEM5_GFORTRAN_PATH=${WORKDIR}/../../software/riscv-gem5/bin/riscv64-unknown-linux-gnu-gfortran
 
+# 生成目录名
+export COLLECT_DIR_NAME=RXU7
+
 # -----------------------------------------------------------
 # 2、构建过程 
 # -----------------------------------------------------------
@@ -30,6 +33,10 @@ SPECFPRATE=521.wrf_r
 }
 1i# wyj
 ' "${SPEC_LITE}/Makefile"
+
+sed -i '93i\
+# wyj\nSPEC_LDFLAGS += -static
+' "${SPEC_LITE}/Makefile.apps"
 
 sed -i '49{
     i# wyj
@@ -54,5 +61,5 @@ make build_allr -j${PARALLEL_NUM}
 
 # 收集结果
 cd ${SPEC_LITE}
-cp 521.wrf_r/build/521.wrf_r cpu2017_build.RXU7/wrf
+cp 521.wrf_r/build/521.wrf_r cpu2017_build.${COLLECT_DIR_NAME}/wrf
 

@@ -69,6 +69,8 @@ run_gem5() {
       --l2cache --l2_size=1MB --l2_assoc=8 --l3cache --l3_size=16MB --l3_assoc=16 \
       --l1-to-l2-pf-hint --l2-hwp-type=WorkerPrefetcher --l2-to-l3-pf-hint --l3-hwp-type=WorkerPrefetcher \
       --bp-type=DecoupledBPUWithFTB \
+      --disable-sc \
+      --enable-difftest \
       --difftest-ref-so ${GCBV_REF_SO} \
       --generic-rv-cpt=${checkpoint} \
       --gcpt-restorer=${GCB_RESTORER} \
