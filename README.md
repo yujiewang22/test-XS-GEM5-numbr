@@ -23,7 +23,7 @@ test-XS-GEM5-numbr
 │   ├── riscv-pk/
 │   ├── riscv-linux/
 │   ├── riscv-rootfs/
-│   ├── build_bin.sh
+│   ├── build_all_bin.sh
 │   ├── compile_nemu.sh
 │   └── build_all_checkpoint.sh
 ├── run-gem5
@@ -104,20 +104,12 @@ cd spec2017-dir/wrapper
 
 #### 2.1 构建单个bbl.bin
 
-1. 复制build-checkpoint-riscvpk/bbl-file内的一个benchmark，内部的所有文件到build-checkpoint-riscvpk/riscv-rootfs/rootfsimg目录下
-
-2. 制作单个bbl.bin
-
 ```shell
 cd build-checkpoint-riscvpk
-./build_bin.sh
+./build_all_bin.sh
 ```
 
-3. 将构建的bbl-file/bbl.bin文件移动到该benchmark目录内
-
-#### 2.2 构建所有bbl.bin 
-
-重复上述操作，完成所有23个benchmark的bbl.bin构建
+在bbl-file目录下，完成所有23个benchmark的bbl.bin构建
 
 ### 3 构建checkpoint
 
