@@ -1,4 +1,4 @@
-项目基于开源的XS-GEM5模型，在全系统仿真的基础上，通过采用SimPoint checkpoint机制和多进程加速了运行过程，从而能够快速测算XS-GEM5在不同numBr配置下的SPEC2017分数
+项目基于开源的XS-GEM5模型，在全系统仿真的基础上，通过采用SimPoint checkpoint机制和多进程加速了运行过程，从而能够快速测算XS-GEM5在不同numBr配置下的SPEC2017分数。
 
 ## 一、目录结构
 
@@ -101,8 +101,6 @@ cd spec2017-dir/wrapper
 ```
 
 ### 2 构建bbl.bin
-
-#### 2.1 构建单个bbl.bin
 
 ```shell
 cd build-checkpoint-riscvpk
