@@ -30,7 +30,7 @@ test-XS-GEM5-numbr
 │   ├── GEM5/
 │   ├── result-folder
 │   │   └── reorg.sh
-│   ├── gcpt.bin
+│   ├── gcpt.bin           # 需后期复制
 │   ├── compile_gem5.sh
 │   ├── run_all_checkpoint.sh
 │   └── analyze-data
@@ -142,17 +142,24 @@ cd run-gem5
 
 GEM5的编译过程可能存在与仓库相关的依赖，这里删去了原有仓库的.git信息使得修改后的GEM5编译时可能会出现blob库问题；因此若编译失败，则需重新clone GEM5源码，并参照提供的文件手动修改
 
-#### 4.3 下载nemu-so
+#### 4.3 放置相关文件
+
+1. 下载nemu-so
 
 ```shell
 cd run-gem5/GEM5
 wget https://github.com/OpenXiangShan/GEM5/releases/download/2024-10-16/riscv64-nemu-interpreter-c1469286ca32-so
 ```
-#### 4.4 放置checkpoint文件
+
+2. 复制gcpt.bin文件
+
+复制通过compile_nemu.sh脚本生成的gcpt.bin文件，到run_gem5目录下，用于GEM5执行时恢复程序的插入
+
+3. 放置checkpoint文件
 
 将制作好的build-checkpoint-riscvpk/NEMU/checkpoint_example_result目录移动到run-gem5/result-folder内
 
-#### 4.5 运行所有checkpoint
+#### 4.4 运行所有checkpoint
 
 ```shell
 cd run-gem5
