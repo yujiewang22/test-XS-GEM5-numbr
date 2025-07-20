@@ -7,7 +7,7 @@ start_time=$(date +%s)
 # -----------------------------------------------------------
 
 # 核心数
-export PARALLEL_NUM=1
+export PARALLEL_NUM=4
 
 # 当前工作目录
 export WORKDIR=$(pwd)
