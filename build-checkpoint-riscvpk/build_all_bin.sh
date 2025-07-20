@@ -29,6 +29,9 @@ export COLLECT_DIR_NAME=RXU7
 export SPEC2017_EXE_DIR=${WORKDIR}/../spec2017-dir/wrapper/CPU2017LiteWrapper/cpu2017_build.${COLLECT_DIR_NAME}
 export SPEC2017_INPUT_DIR=${WORKDIR}/../spec2017-dir/cpu2017-compiled/cpu2017/spec2017_run_dir
 
+# Linux menuconfig flag
+export MENUCONFIG_FLAG_FILE=${WORKDIR}/riscv-linux/.menuconfig_done
+
 # -----------------------------------------------------------
 # 2、构建过程 
 # -----------------------------------------------------------
@@ -56,10 +59,11 @@ build_benchmark() {
     cd ${WORKDIR}/riscv-linux
     make clean
     make ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- fpga_defconfig
-    # 判断是否为首次构建（即 .config 不存在）
-    if [ ! -f ".config" ]; then
-        echo "[INFO] .config not found. Launching menuconfig for initial setup..."
+    # 判断是否为首次构建
+    if [ ! -f "${MENUCONFIG_FLAG_FILE}" ]; then
+        echo "[INFO] Launching menuconfig for initial setup..."
         make ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- menuconfig
+        touch ${MENUCONFIG_FLAG_FILE}
     else
         make -j${PARALLEL_NUM} ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu-
     fi
@@ -84,4 +88,6 @@ for dir in ${WORKLOAD_DIR}/*; do
         build_benchmark "${benchmark}"
     fi
 done
+
+rm -rf ${MENUCONFIG_FLAG_FILE}
 
