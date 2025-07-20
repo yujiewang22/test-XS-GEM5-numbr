@@ -8,7 +8,7 @@ test-XS-GEM5-numbr
 ├── software
 │   ├── riscv64gc/         # 需自行放置
 │   └── riscv-gem5/        # 需自行放置
-├──spec2017-dir
+├── spec2017-dir
 │   ├── cpu2017/           # 需自行放置
 │   ├── cpu2017-compiled
 │   │   ├── rv64g.cfg
@@ -18,8 +18,8 @@ test-XS-GEM5-numbr
 │       ├── compile_wrapper.sh
 │       └── recompile_wrf.sh
 ├── build-checkpoint-riscvpk
-│   ├── NEMU/
 │   ├── bbl-file/
+│   ├── NEMU/
 │   ├── riscv-pk/
 │   ├── riscv-linux/
 │   ├── riscv-rootfs/
@@ -60,9 +60,9 @@ test-XS-GEM5-numbr
 
 #### 1.1 放置工具链
 
-1. 将riscv-gem5工具链置于software目录下
+1. 将riscv64gc工具链置于software目录下
 
-2. 将rv64gc工具链置于software目录下
+2. 将riscv-gem5工具链置于software目录下
 
 #### 1.2 放置cpu2017源码
 
@@ -81,8 +81,7 @@ cd spec2017-dir/cpu2017-compiled
 cd spec2017-dir/cpu2017-compiled
 python3 get_spec2017_input.py
 ```
-
-注意x264和fotonik3d测例各有一个输入文件需要使用SPEC2017内部脚本单独构建，此处提供构建好的输入文件，使用时需将各自输入文件放置在前述的输入文件目录中
+注意x264和fotonik3d两个测例各自有一个输入文件需要通过cpu2017内部脚本单独构建。为方便使用，我们已提供构建完成的输入文件，保存在spec2017_run_dir_part目录中。使用时，请将对应的输入文件复制到前述生成的spec2017-dir/cpu2017-compiled/cpu2017/spec2017_run_dir输入文件目录内
 
 #### 1.5 编译CPU2017LiteWrapper
 
@@ -119,6 +118,8 @@ cd build-checkpoint-riscvpk
 ```
 
 #### 3.2 构建所有checkpoint
+
+修改脚本内环境变量PARALLEL_NUM进行多进程构建
 
 ```shell
 cd build-checkpoint-riscvpk
@@ -161,6 +162,8 @@ wget https://github.com/OpenXiangShan/GEM5/releases/download/2024-10-16/riscv64-
 
 #### 4.4 运行所有checkpoint
 
+修改脚本内环境变量PARALLEL_NUM进行多进程运行
+
 ```shell
 cd run-gem5
 ./run_all_checkpoint.sh
@@ -175,7 +178,7 @@ cd run-gem5/result-folder
 ./reorg.sh
 ```
 
-####  5.2 生成json文件
+#### 5.2 生成json文件
 
 ```shell
 cd run-gem5/analyze-data
