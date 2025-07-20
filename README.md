@@ -153,7 +153,7 @@ wget https://github.com/OpenXiangShan/GEM5/releases/download/2024-10-16/riscv64-
 
 2. 复制gcpt.bin文件
 
-复制通过compile_nemu.sh脚本生成的gcpt.bin文件，到run_gem5目录下，用于GEM5执行时恢复程序的插入
+复制build-checkpoint-riscvpk/NEMU/resource/gcpt_restore/build/gcpt.bin文件到run_gem5/gcpt.bin，用于GEM5执行时恢复程序的插入
 
 3. 放置checkpoint文件
 
