@@ -35,6 +35,7 @@ export CHECKPOINT_FORMAT=gz
 
 # 创建文件夹
 cd ${WORKDIR}/result-folder
+rm -rf ${OUTPUT_BASE_DIR_NAME}
 mkdir -p ${OUTPUT_BASE_DIR_NAME}
 cd ${OUTPUT_BASE_DIR_NAME}
 
