@@ -27,10 +27,9 @@ test-XS-GEM5-numbr
 │   ├── compile_nemu.sh
 │   └── build_all_checkpoint.sh
 ├── run-gem5
-│   ├── GEM5/
 │   ├── result-folder
 │   │   └── reorg.sh
-│   ├── gcpt.bin           # 需后期复制
+│   ├── setup_gem5.sh
 │   ├── compile_gem5.sh
 │   ├── run_all_checkpoint.sh
 │   └── analyze-data
@@ -130,37 +129,35 @@ cd build-checkpoint-riscvpk
 
 ### 4 GEM5运行checkpoint
 
-#### 4.1 修改numBr配置
+#### 4.1 初始化GEM5
+
+```shell
+cd run-gem5
+./setup_gem5.sh
+```
+
+#### 4.2 修改numBr配置
 
 修改GEM5/src/cpu/pred/BranchPredictor.py内的numBr参数（1、2、4、8）
 
-#### 4.2 编译GEM5
+#### 4.3 编译GEM5
 
 ```shell
 cd run-gem5
 ./compile_gem5.sh
 ```
 
-GEM5的编译过程可能存在与仓库相关的依赖，这里删去了原有仓库的.git信息使得修改后的GEM5编译时可能会出现blob库问题；因此若编译失败，则需重新clone GEM5源码，并参照提供的文件手动修改
+#### 4.4 放置相关文件
 
-#### 4.3 放置相关文件
-
-1. 下载nemu-so
-
-```shell
-cd run-gem5/GEM5
-wget https://github.com/OpenXiangShan/GEM5/releases/download/2024-10-16/riscv64-nemu-interpreter-c1469286ca32-so
-```
-
-2. 复制gcpt.bin文件
+1. 复制gcpt.bin文件
 
 复制build-checkpoint-riscvpk/NEMU/resource/gcpt_restore/build/gcpt.bin文件到run_gem5/gcpt.bin，用于GEM5执行时恢复程序的插入
 
-3. 放置checkpoint文件
+2. 放置checkpoint文件
 
 将制作好的build-checkpoint-riscvpk/NEMU/checkpoint_example_result目录移动到run-gem5/result-folder内
 
-#### 4.4 运行所有checkpoint
+#### 4.5 运行所有checkpoint
 
 修改脚本内环境变量PARALLEL_NUM进行多进程运行
 
