@@ -188,3 +188,5 @@ cd run-gem5/analyze-data
 cd run-gem5/analyze-data
 ./compute_score.sh
 ```
+
+最终将在终端打印出GEM5运行的SPEC2017分数
