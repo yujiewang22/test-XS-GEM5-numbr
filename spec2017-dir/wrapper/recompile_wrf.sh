@@ -5,7 +5,7 @@
 # -----------------------------------------------------------
 
 # 核心数
-export PARALLEL_NUM=4
+export PARALLEL_NUM=8
 
 # 当前工作目录
 export WORKDIR=$(pwd)
