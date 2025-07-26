@@ -43,30 +43,30 @@ rm -rf ${RESULT}
 profiling(){
     workload=$1
     log=${RESULT}/${workload}/logs/profiling_logs
-    mkdir -p $log
+    mkdir -p ${log}
 
-    $NEMU ${WORKLOAD_DIR}/${workload}/bbl.bin \
-        -D ${RESULT}/${workload} -w bbl -C $profiling_result_name \
-        -b --simpoint-profile --cpt-interval ${interval} \
-        -r $GCPT \
-        > ${log}/bbl-out.txt 2> ${log}/bbl-err.txt
+    ${NEMU} ${WORKLOAD_DIR}/${workload}/bbl.bin \
+            -D ${RESULT}/${workload} -w bbl -C ${profiling_result_name} \
+            -b --simpoint-profile --cpt-interval ${interval} \
+            -r ${GCPT} \
+            > ${log}/bbl-out.txt 2> ${log}/bbl-err.txt
 }
 
 # Cluster
 cluster(){
     workload=$1
     log=${RESULT}/${workload}/logs/cluster_logs
-    mkdir -p $log
+    mkdir -p ${log}
 
     export CLUSTER=${RESULT}/${workload}/cluster/bbl
-    mkdir -p $CLUSTER
+    mkdir -p ${CLUSTER}
 
     random1=`head -20 /dev/urandom | cksum | cut -c 1-6`
     random2=`head -20 /dev/urandom | cksum | cut -c 1-6`
 
-    $SIMPOINT \
+    ${SIMPOINT} \
         -loadFVFile ${RESULT}/${workload}/${profiling_result_name}/bbl/simpoint_bbv.gz \
-        -saveSimpoints $CLUSTER/simpoints0 -saveSimpointWeights $CLUSTER/weights0 \
+        -saveSimpoints ${CLUSTER}/simpoints0 -saveSimpointWeights ${CLUSTER}/weights0 \
         -inputVectorsGzipped -maxK 30 -numInitSeeds 2 -iters 1000 -seedkm ${random1} -seedproj ${random2} \
         > ${log}/bbl-out.txt 2> ${log}/bbl-err.txt
 }
@@ -75,16 +75,16 @@ cluster(){
 checkpoint(){
     workload=$1
     log=${RESULT}/${workload}/logs/checkpoint_logs
-    mkdir -p $log
+    mkdir -p ${log}
 
-    export CLUSTER=$RESULT/${workload}/cluster
+    export CLUSTER=${RESULT}/${workload}/cluster
 
-    $NEMU ${WORKLOAD_DIR}/${workload}/bbl.bin \
-         -D ${RESULT}/${workload} -w bbl -C spec-cpt  \
-         -b -S $CLUSTER --cpt-interval $interval \
-         -r $GCPT \
-         --checkpoint-format ${CHECKPOINT_FORMAT} \
-         > ${log}/bbl-out.txt 2> ${log}/bbl-err.txt
+    ${NEMU} ${WORKLOAD_DIR}/${workload}/bbl.bin \
+            -D ${RESULT}/${workload} -w bbl -C spec-cpt  \
+            -b -S ${CLUSTER} --cpt-interval ${interval} \
+            -r ${GCPT} \
+            --checkpoint-format ${CHECKPOINT_FORMAT} \
+            > ${log}/bbl-out.txt 2> ${log}/bbl-err.txt
 }
 
 export -f profiling
