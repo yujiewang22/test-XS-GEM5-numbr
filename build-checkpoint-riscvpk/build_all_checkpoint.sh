@@ -64,11 +64,10 @@ cluster(){
     random1=`head -20 /dev/urandom | cksum | cut -c 1-6`
     random2=`head -20 /dev/urandom | cksum | cut -c 1-6`
 
-    ${SIMPOINT} \
-        -loadFVFile ${RESULT}/${workload}/${profiling_result_name}/bbl/simpoint_bbv.gz \
-        -saveSimpoints ${CLUSTER}/simpoints0 -saveSimpointWeights ${CLUSTER}/weights0 \
-        -inputVectorsGzipped -maxK 30 -numInitSeeds 2 -iters 1000 -seedkm ${random1} -seedproj ${random2} \
-        > ${log}/bbl-out.txt 2> ${log}/bbl-err.txt
+    ${SIMPOINT} -loadFVFile ${RESULT}/${workload}/${profiling_result_name}/bbl/simpoint_bbv.gz \
+                -saveSimpoints ${CLUSTER}/simpoints0 -saveSimpointWeights ${CLUSTER}/weights0 \
+                -inputVectorsGzipped -maxK 30 -numInitSeeds 2 -iters 1000 -seedkm ${random1} -seedproj ${random2} \
+                > ${log}/bbl-out.txt 2> ${log}/bbl-err.txt
 }
 
 # Checkpointing
