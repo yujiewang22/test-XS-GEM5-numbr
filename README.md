@@ -36,7 +36,8 @@ test-XS-GEM5-numbr
 │       ├── gem5_data_proc/
 │       ├── spec2017_workload_list.txt
 │       ├── gen_checkpoint_json.sh
-│       └── compute_score.sh
+│       ├── compute_score.sh
+│       └── collect_info_weighted.py
 │
 └── README.md
 ```
